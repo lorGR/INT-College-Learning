@@ -1,6 +1,6 @@
 .navbar {
     border-top: 1px solid black;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -22,6 +22,12 @@
             &:visited {
                 color: black;
             }
+            &:nth-of-type(2) {
+                border-left: 1px solid black;
+            }
+            &:nth-of-type(3) {
+                border-left: 1px solid black;
+            }
         }
     }
     &__item {
@@ -34,7 +40,6 @@
         // border: 2px solid #fff;
         transition: all .35s ease-in-out;
         &:hover{
-            // border: 2px solid #e8e8e8;
             box-sizing: border-box;
             border-top: 2px solid var(--main-color);
             background-color: #e8e8e8;
