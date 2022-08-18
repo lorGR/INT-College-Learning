@@ -2,8 +2,16 @@
 
 @import './views/styles/Navbar.scss';
 
+@import './views/styles/Hero.scss';
+
 .App {
-  text-align: center;
+
+}
+
+body{
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 
 .App-logo {
