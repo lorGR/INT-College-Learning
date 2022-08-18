@@ -31,13 +31,13 @@
         transition: all .35s ease-in-out;
         &:hover{
             border: 2px solid #e8e8e8;
-            border-top: 2px solid #6b6fe6;
+            border-top: 2px solid var(--main-color);
             background-color: #e8e8e8;
             .item__icon {
-                color: #6b6fe6;
+                color: var(--main-color);
             }
             .item__description {
-                color: #6b6fe6;
+                color: var(--main-color);
             }
         }
         .item__icon {
