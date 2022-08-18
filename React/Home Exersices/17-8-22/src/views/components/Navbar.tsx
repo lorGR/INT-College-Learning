@@ -11,17 +11,20 @@ const Navbar = () => {
             <ul className="navbar__items">
                 <Link to="/">
                     <li className="navbar__item">
-                        <FontAwesomeIcon icon={faHouse} size="3x"/>
+                        <FontAwesomeIcon className="item__icon" icon={faHouse} size="2x"/>
+                        <p className="item__description">Home</p>
                     </li>
                 </Link>
                 <Link to="/cart">
                     <li className="navbar__item">
-                        <FontAwesomeIcon icon={faCartShopping} size="3x" />
+                        <FontAwesomeIcon className="item__icon" icon={faCartShopping} size="2x" />
+                        <p className="item__description">Cart</p>
                     </li>
                 </Link>
                 <Link to="/profile">
                     <li className="navbar__item">
-                        <FontAwesomeIcon icon={faUser} size="3x"/>
+                        <FontAwesomeIcon className="item__icon" icon={faUser} size="2x"/>
+                        <p className="item__description">Profile</p>
                     </li>
                 </Link>
             </ul>

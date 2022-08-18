@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 const Main = () => {
     return (
-        <div className="main">
-            <Navbar />
+        <div className="main conatiner">
             <Outlet />
+            <Navbar />
         </div>
     );
 }
