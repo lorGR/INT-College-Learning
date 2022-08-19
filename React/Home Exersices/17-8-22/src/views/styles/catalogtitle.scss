@@ -16,23 +16,22 @@
         &::after {
             content: '';
             display: inline-block;
-            width: 30px;
-            height: 30px;
+            width: 33px;
+            height: 33px;
             border-radius: 5rem;
             background-color: #fff;
             position: absolute;
-            top: 15%;
-            left: 80%;
+            top: 8%;
+            left: 79%;
         }
         &::before {
             content: 'nvm';
             color: #000;
             position: absolute;
             font-size: 10px;
-            left: 81%;
-            top: 25%;
+            left: 80.35%;
+            top: 20%;
             z-index: 1;
-
         }
     }
     &__date{
