@@ -20,6 +20,14 @@ const Catalog = () => {
         {
             type: 'accessories',
             id: uuidv4()
+        },
+        {
+            type: 'accessories',
+            id: uuidv4()
+        },
+        {
+            type: 'accessories',
+            id: uuidv4()
         }
     ]
     return (

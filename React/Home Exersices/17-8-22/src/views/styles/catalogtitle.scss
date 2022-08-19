@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    height: 10%;
+    background-color: var(--main-color);
+    clip-path:polygon(25% 100%, 0% 50%, 0px -1px, 100% 0px, 100.00% 50%,75% 100%);
     h1, p {
         margin: 0;
     }
@@ -39,7 +42,8 @@
         color: #fff;
         width: 100%;
         text-align: center;
-        clip-path: polygon(50% 60%, 0 -1px, 100% 0);
+        // clip-path: polygon(50% 80%, 0 -1px, 100% 0);
+        
         height: 50px;
     }
 }
