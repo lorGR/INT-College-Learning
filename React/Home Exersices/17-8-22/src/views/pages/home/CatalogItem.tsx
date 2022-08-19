@@ -23,8 +23,8 @@ const CatalogItem = ({ type }:CatalogItemProps) => {
     
     return (
         <div className="catalog__item">
+            <p>{type.toUpperCase()}</p>
             <img src={imgUrl} alt={imgUrl} />
-            <p>{type}</p>
         </div>
     );
 }
