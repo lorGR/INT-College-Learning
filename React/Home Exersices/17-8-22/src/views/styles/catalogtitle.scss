@@ -29,11 +29,12 @@
         }
         &::before {
             content: 'nvm';
+            font-weight: 900;
             color: #000;
             position: absolute;
             font-size: 10px;
-            left: 80.35%;
-            top: 20%;
+            left: 80.15%;
+            top: 23%;
             z-index: 1;
         }
     }
