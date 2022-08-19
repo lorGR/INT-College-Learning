@@ -8,9 +8,11 @@
 
 @import './views/styles/Hero.scss';
 @import './views/styles/catalog.scss';
+@import './views/styles/catalogtitle.scss';
 
 :root {
   --main-color: #ED1C24;
+  --secondry-color: #0173BC;
 }
 
 .App {

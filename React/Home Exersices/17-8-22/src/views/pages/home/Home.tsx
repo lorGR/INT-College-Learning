@@ -1,11 +1,12 @@
-import Catalog from "./Catalog";
 import Hero from "./Hero";
+import Catalog from "./Catalog";
+import CatalogTitle from "./CatalogTitle";
 
 const Home = () => {
     return (
         <div className="home">
             <Hero />
-            <h1>Catalog</h1>
+            <CatalogTitle />
             <Catalog />
         </div>
     );
