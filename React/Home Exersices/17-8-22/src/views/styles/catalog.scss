@@ -1,10 +1,14 @@
 .catalog {
     display: grid;
     grid-template-columns: auto auto;
-    padding: .5em 2em;
+    padding: .75em 2em;
     gap: 1em;
     overflow-y: scroll;
-    height: 60%;
+    height: 62.68%;
+    align-items: center;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     &__item {
         width: 100%;
         display: flex;
