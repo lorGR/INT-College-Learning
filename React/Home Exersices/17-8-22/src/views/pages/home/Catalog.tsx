@@ -18,15 +18,23 @@ const Catalog = () => {
             id: uuidv4()
         },
         {
-            type: 'accessories',
+            type: 'socks',
             id: uuidv4()
         },
         {
-            type: 'accessories',
+            type: 'jewelry',
             id: uuidv4()
         },
         {
-            type: 'accessories',
+            type: 'glasses',
+            id: uuidv4()
+        },
+        {
+            type: 'backpacks',
+            id: uuidv4()
+        },
+        {
+            type: 'belts',
             id: uuidv4()
         }
     ]
