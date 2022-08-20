@@ -1,6 +1,23 @@
 .browse-catalog {
     height: 90%;
-    h1 {
-        margin: 0;
+    &__header {
+        width: 100%;
+        position: relative;
+        &__title {
+            display: inline-block;
+            background-color: var(--main-color);
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: .35em .3em;
+            text-align: center;
+            color: #fff;
+        }
+        &__back {
+            position: absolute;
+            z-index: 1;
+            left: 5%;
+            top: 15%;
+        }
     }
 }

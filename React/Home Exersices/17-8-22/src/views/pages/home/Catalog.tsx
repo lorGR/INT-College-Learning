@@ -42,7 +42,7 @@ const Catalog = () => {
         <div className="catalog">
             {catalog.map(item => {
                 return (
-                    <Link to={`${item.type}`}>
+                    <Link to={`${item.type}`} key={item.id}>
                         <CatalogItem type={item.type} key={item.id} />
                     </Link>
                 );
