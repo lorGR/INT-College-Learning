@@ -9,6 +9,7 @@ import coats from "../../assets/images/coats.png";
 
 import cargoPants from "../../assets/images/cargoPants.png";
 import sweatPants from "../../assets/images/sweatPants.png";
+import jeans from "../../assets/images/jeans.png";
 
 
 interface BrowseCatalogItems {
@@ -37,6 +38,8 @@ const BrowseCatalogItems = ({ type }: BrowseCatalogItems) => {
         imgUrl = cargoPants;
     } else if ( type === "Sweatpants") {
         imgUrl = sweatPants;
+    } else if ( type === "Jeans") {
+        imgUrl = jeans;
     }
     return (
         <div className="browse-catalog__item">
