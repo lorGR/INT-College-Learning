@@ -66,12 +66,14 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
                 </Link>
                 <h2 className="browse-catalog__header__title">{headerTitle.toLocaleUpperCase()}</h2>
             </div>
-            { catalogItems.map(item => {
-                if(item.type === type)
-                return (
-                    <BrowseCatalogItems type={item.subType} key={item.id}/>
-                );
-            })}
+            <div className="browse-catalog__grid">
+                { catalogItems.map(item => {
+                    if(item.type === type)
+                    return (
+                        <BrowseCatalogItems type={item.subType} key={item.id}/>
+                    );
+                })}
+            </div>
 
         </div>
     );

@@ -11,29 +11,29 @@ interface BrowseCatalogItems {
     type: string
 }
 
-const BrowseCatalogItems = ({type}: BrowseCatalogItems) => {
+const BrowseCatalogItems = ({ type }: BrowseCatalogItems) => {
     let imgUrl;
-    if( type === "T-Shirts") {
+    if (type === "T-Shirts") {
         imgUrl = tshirts;
-    } else if ( type === "Long Sleeves") {
+    } else if (type === "Long Sleeves") {
         imgUrl = longSleeves;
-    } else if ( type === "Sweaters") {
+    } else if (type === "Sweaters") {
         imgUrl = sweaters;
-    } else if ( type === "Button Down") {
+    } else if (type === "Button Down") {
         imgUrl = buttonDown;
-    } else if ( type === "Knitwears") {
+    } else if (type === "Knitwears") {
         imgUrl = knitwears;
-    } else if ( type === "Jackets") {
+    } else if (type === "Jackets") {
         imgUrl = jackets;
-    } else if ( type === "Hoodies") {
+    } else if (type === "Hoodies") {
         imgUrl = hoodies;
-    } else if ( type === "Coats") {
+    } else if (type === "Coats") {
         imgUrl = coats;
     }
     return (
-        <div className="browse-catalog-items">
+        <div className="browse-catalog__item">
             <p>{type}</p>
-            <img src={imgUrl} alt={imgUrl}/>
+            <img src={imgUrl} alt={imgUrl} />
         </div>
     );
 }
