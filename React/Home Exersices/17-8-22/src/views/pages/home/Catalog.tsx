@@ -30,7 +30,7 @@ const Catalog = () => {
             id: uuidv4()
         },
         {
-            type: 'backpacks',
+            type: 'bags',
             id: uuidv4()
         },
         {

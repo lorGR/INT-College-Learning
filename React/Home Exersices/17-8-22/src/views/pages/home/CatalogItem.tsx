@@ -1,7 +1,7 @@
 import shoes from "../../assets/images/shoes.png";
 import jewellery from "../../assets/images/jewellery.png";
 import socks from "../../assets/images/socks.png";
-import backpacks from "../../assets/images/backpacks.png";
+import bags from "../../assets/images/bags.png";
 import belts from "../../assets/images/belts.png";
 import tops from "../../assets/images/tops.webp";
 import bottoms from "../../assets/images/bottoms.png";
@@ -26,8 +26,8 @@ const CatalogItem = ({ type }:CatalogItemProps) => {
         imgUrl = sunglasses;
     } else if ( type === 'socks') {
         imgUrl = socks;
-    } else if ( type === 'backpacks') {
-        imgUrl = backpacks;
+    } else if ( type === 'bags') {
+        imgUrl = bags;
     } else if ( type === 'belts') {
         imgUrl = belts;
     } 

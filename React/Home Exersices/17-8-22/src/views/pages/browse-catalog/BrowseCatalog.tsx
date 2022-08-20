@@ -54,9 +54,57 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
         },
         {
             type: "bottoms",
-            subType: "joggers",
+            subType: "Cargo Pants",
             id: uuidv4()
         },
+        {
+            type: "bottoms",
+            subType: "Sweatpants",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Jeans",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Skinny Jeans",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Suit Pants",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Planid Bottoms",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Shorts",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Active Shorts",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Sport Pants",
+            id: uuidv4()
+        },
+        {
+            type: "bottoms",
+            subType: "Sleeping Pants",
+            id: uuidv4()
+        },
+        
+        
+        
     ];
     return (
         <div className="browse-catalog">

@@ -9,6 +9,9 @@
     &::-webkit-scrollbar {
         display: none;
     }
+    a{
+        color: #000;
+    }
     &__item {
         width: 100%;
         display: flex;
