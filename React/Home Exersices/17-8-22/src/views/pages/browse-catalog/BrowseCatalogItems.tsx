@@ -10,7 +10,13 @@ import coats from "../../assets/images/coats.png";
 import cargoPants from "../../assets/images/cargoPants.png";
 import sweatPants from "../../assets/images/sweatPants.png";
 import jeans from "../../assets/images/jeans.png";
-
+import skinnyJeans from "../../assets/images/skinnyJeans.png";
+import suitPants from "../../assets/images/suitPants.png";
+import shorts from "../../assets/images/shorts.png";
+import activeShorts from "../../assets/images/activeShorts.png";
+import sportsPants from "../../assets/images/sportsPants.png";
+import sleepingPants from "../../assets/images/sleepingPants.png";
+import sweammingPants from "../../assets/images/sweammingPants.png";
 
 interface BrowseCatalogItems {
     type: string
@@ -34,19 +40,33 @@ const BrowseCatalogItems = ({ type }: BrowseCatalogItems) => {
         imgUrl = hoodies;
     } else if (type === "Coats") {
         imgUrl = coats;
-    } else if ( type === "Cargo Pants") {
+    } else if (type === "Cargo Pants") {
         imgUrl = cargoPants;
-    } else if ( type === "Sweatpants") {
+    } else if (type === "Sweatpants") {
         imgUrl = sweatPants;
-    } else if ( type === "Jeans") {
+    } else if (type === "Jeans") {
         imgUrl = jeans;
+    } else if (type === "Skinny Jeans") {
+        imgUrl = skinnyJeans;
+    } else if (type === "Suit Pants") {
+        imgUrl = suitPants;
+    } else if (type === "Shorts") {
+        imgUrl = shorts;
+    } else if (type === "Active Shorts") {
+        imgUrl = activeShorts;
+    } else if (type === "Sport Pants") {
+        imgUrl = sportsPants;
+    } else if (type === "Sleeping Pants") {
+        imgUrl = sleepingPants;
+    } else if (type === "Sweamming Pants") {
+        imgUrl = sweammingPants;
     }
-    return (
-        <div className="browse-catalog__item">
-            <p>{type}</p>
-            <img src={imgUrl} alt={imgUrl} />
-        </div>
-    );
+        return (
+            <div className="browse-catalog__item">
+                <p>{type}</p>
+                <img src={imgUrl} alt={imgUrl} />
+            </div>
+        );
 }
 
 export default BrowseCatalogItems;

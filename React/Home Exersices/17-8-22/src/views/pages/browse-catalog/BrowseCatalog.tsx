@@ -79,11 +79,6 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
         },
         {
             type: "bottoms",
-            subType: "Planid Bottoms",
-            id: uuidv4()
-        },
-        {
-            type: "bottoms",
             subType: "Shorts",
             id: uuidv4()
         },
@@ -102,6 +97,11 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
             subType: "Sleeping Pants",
             id: uuidv4()
         },
+        {
+            type: "bottoms",
+            subType: "Sweamming Pants",
+            id: uuidv4()
+        }
         
         
         
