@@ -12,9 +12,9 @@ const BrowseSubTypeTitle = ({type, backType}: BrowseSubTypeTitle) => {
     return (
         <div className="browse-subtype__title">
             <Link to={backTo}>
-                <FontAwesomeIcon icon={faAngleLeft} size="2x" />
+                <FontAwesomeIcon className="browse-subtype__title__icon" icon={faAngleLeft} size="2x" color="#fff" />
             </Link>
-            <h2>{type}</h2>
+            <h2>{type.toLocaleUpperCase()}</h2>
         </div>
     );
 }
