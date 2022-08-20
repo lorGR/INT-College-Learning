@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CatalogItem from "./CatalogItem";
 const { v4: uuidv4 } = require('uuid');
 

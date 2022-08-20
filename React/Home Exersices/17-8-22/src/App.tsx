@@ -6,7 +6,7 @@ import './App.scss';
 import Home from "./views/pages/home/Home";
 import Cart from "./views/pages/cart/Cart";
 import Profile from "./views/pages/profile/Profile";
-import BrowseCatalog from "./views/components/BrowseCatalog";
+import BrowseCatalog from "./views/pages/browse-catalog/BrowseCatalog";
 
 function App() {
   return (
