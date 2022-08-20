@@ -39,7 +39,7 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
             { catalogItems.map(item => {
                 if(item.type === type)
                 return (
-                    <BrowseCatalogItems type={item.subType} />
+                    <BrowseCatalogItems type={item.subType} key={item.id}/>
                 );
             })}
 
