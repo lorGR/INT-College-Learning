@@ -14,19 +14,49 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
     const catalogItems = [
         {
             type: "tops",
-            subType: "t-shirts",
+            subType: "T-Shirts",
             id: uuidv4()
         },
         {
             type: "tops",
-            subType: "long sleeves",
+            subType: "Long Sleeves",
+            id: uuidv4()
+        },
+        {
+            type: "tops",
+            subType: "Sweaters",
+            id: uuidv4()
+        },
+        {
+            type: "tops",
+            subType: "Button Down",
+            id: uuidv4()
+        },
+        {
+            type: "tops",
+            subType: "Knitwears",
+            id: uuidv4()
+        },
+        {
+            type: "tops",
+            subType: "Jackets",
+            id: uuidv4()
+        },
+        {
+            type: "tops",
+            subType: "Hoodies",
+            id: uuidv4()
+        },
+        {
+            type: "tops",
+            subType: "Coats",
             id: uuidv4()
         },
         {
             type: "bottoms",
             subType: "joggers",
             id: uuidv4()
-        }
+        },
     ];
     return (
         <div className="browse-catalog">

@@ -1,4 +1,11 @@
 import tshirts from "../../assets/images/tshirts.png";
+import longSleeves from "../../assets/images/longSleeves.png";
+import sweaters from "../../assets/images/sweaters.png";
+import buttonDown from "../../assets/images/buttonDown.png";
+import knitwears from "../../assets/images/knitwears.png";
+import jackets from "../../assets/images/jackets.png";
+import hoodies from "../../assets/images/hoodies.png";
+import coats from "../../assets/images/coats.png";
 
 interface BrowseCatalogItems {
     type: string
@@ -6,7 +13,23 @@ interface BrowseCatalogItems {
 
 const BrowseCatalogItems = ({type}: BrowseCatalogItems) => {
     let imgUrl;
-    imgUrl = type === 't-shirts' ? tshirts : '';
+    if( type === "T-Shirts") {
+        imgUrl = tshirts;
+    } else if ( type === "Long Sleeves") {
+        imgUrl = longSleeves;
+    } else if ( type === "Sweaters") {
+        imgUrl = sweaters;
+    } else if ( type === "Button Down") {
+        imgUrl = buttonDown;
+    } else if ( type === "Knitwears") {
+        imgUrl = knitwears;
+    } else if ( type === "Jackets") {
+        imgUrl = jackets;
+    } else if ( type === "Hoodies") {
+        imgUrl = hoodies;
+    } else if ( type === "Coats") {
+        imgUrl = coats;
+    }
     return (
         <div className="browse-catalog-items">
             <p>{type}</p>
