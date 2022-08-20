@@ -169,7 +169,9 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
                 {catalogItems.map(item => {
                     if (item.type === type)
                         return (
-                            <BrowseCatalogItems type={item.subType} key={item.id} />
+                            <Link to={item.subType} key={item.id}>
+                                <BrowseCatalogItems type={item.subType} key={item.id} backType={item.type}/>
+                            </Link>
                         );
                 })}
             </div>

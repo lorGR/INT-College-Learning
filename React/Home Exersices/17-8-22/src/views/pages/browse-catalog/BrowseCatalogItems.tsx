@@ -35,6 +35,7 @@ import flipFlops from "../../assets/images/ShoesCategories/flipFlops.png";
 
 interface BrowseCatalogItems {
     type: string
+    backType: string
 }
 
 const BrowseCatalogItems = ({ type }: BrowseCatalogItems) => {
@@ -83,9 +84,9 @@ const BrowseCatalogItems = ({ type }: BrowseCatalogItems) => {
         imgUrl = boots;
     } else if (type === "Oxford") {
         imgUrl = oxford;
-    } else if ( type === "Derby") {
+    } else if (type === "Derby") {
         imgUrl = derby;
-    } else if ( type === "Blucher") {
+    } else if (type === "Blucher") {
         imgUrl = blucher;
     } else if (type === "Loafer") {
         imgUrl = loafer;
@@ -93,15 +94,15 @@ const BrowseCatalogItems = ({ type }: BrowseCatalogItems) => {
         imgUrl = monk;
     } else if (type === "Slides") {
         imgUrl = slides;
-    } else if (type === "Flip Flops") {
+    } else if (type === "Flip Flops") { 
         imgUrl = flipFlops;
     }
-        return (
-            <div className="browse-catalog__item">
-                <p>{type}</p>
-                <img src={imgUrl} alt={imgUrl} />
-            </div>
-        );
+    return (
+        <div className="browse-catalog__item">
+            <p>{type}</p>
+            <img src={imgUrl} alt={imgUrl} />
+        </div>
+    );
 }
 
 export default BrowseCatalogItems;

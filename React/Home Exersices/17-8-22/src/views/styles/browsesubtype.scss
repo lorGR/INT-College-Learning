@@ -1,0 +1,10 @@
+.browse-subtype{
+    &__title {
+        display: flex;
+        background-color: var(--main-color);
+        h2 {
+            margin: 0;
+            padding: 0.35em 0.3em;
+        }
+    }
+}

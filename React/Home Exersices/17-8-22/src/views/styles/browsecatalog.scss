@@ -31,7 +31,10 @@
         box-sizing: border-box;
         &::-webkit-scrollbar {
             display: none;
-        }        
+        }
+        a {
+            color: #000;
+        }
         .browse-catalog__item{
             cursor: pointer;
             display: flex;
