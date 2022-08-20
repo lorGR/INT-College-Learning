@@ -1,11 +1,11 @@
-import shoes from "../../assets/images/shoes.png";
-import jewellery from "../../assets/images/jewellery.png";
-import socks from "../../assets/images/socks.png";
-import bags from "../../assets/images/bags.png";
-import belts from "../../assets/images/belts.png";
-import tops from "../../assets/images/tops.webp";
-import bottoms from "../../assets/images/bottoms.png";
-import sunglasses from "../../assets/images/sunglasses.png";
+import shoes from "../../assets/images/Categories/shoes.png";
+import jewellery from "../../assets/images/Categories/jewellery.png";
+import socks from "../../assets/images/Categories/socks.png";
+import bags from "../../assets/images/Categories/bags.png";
+import belts from "../../assets/images/Categories/belts.png";
+import tops from "../../assets/images/Categories/tops.webp";
+import bottoms from "../../assets/images/Categories/bottoms.png";
+import sunglasses from "../../assets/images/Categories/sunglasses.png";
 
 interface CatalogItemProps {
     type : string

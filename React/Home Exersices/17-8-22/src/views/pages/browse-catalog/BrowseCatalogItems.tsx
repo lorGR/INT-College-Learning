@@ -1,22 +1,22 @@
-import tshirts from "../../assets/images/tshirts.png";
-import longSleeves from "../../assets/images/longSleeves.png";
-import sweaters from "../../assets/images/sweaters.png";
-import buttonDown from "../../assets/images/buttonDown.png";
-import knitwears from "../../assets/images/knitwears.png";
-import jackets from "../../assets/images/jackets.png";
-import hoodies from "../../assets/images/hoodies.png";
-import coats from "../../assets/images/coats.png";
+import tshirts from "../../assets/images/TopCategories/tshirts.png";
+import longSleeves from "../../assets/images/TopCategories/longSleeves.png";
+import sweaters from "../../assets/images/TopCategories/sweaters.png";
+import buttonDown from "../../assets/images/TopCategories/buttonDown.png";
+import knitwears from "../../assets/images/TopCategories/knitwears.png";
+import jackets from "../../assets/images/TopCategories/jackets.png";
+import hoodies from "../../assets/images/TopCategories/hoodies.png";
+import coats from "../../assets/images/TopCategories/coats.png";
 
-import cargoPants from "../../assets/images/cargoPants.png";
-import sweatPants from "../../assets/images/sweatPants.png";
-import jeans from "../../assets/images/jeans.png";
-import skinnyJeans from "../../assets/images/skinnyJeans.png";
-import suitPants from "../../assets/images/suitPants.png";
-import shorts from "../../assets/images/shorts.png";
-import activeShorts from "../../assets/images/activeShorts.png";
-import sportsPants from "../../assets/images/sportsPants.png";
-import sleepingPants from "../../assets/images/sleepingPants.png";
-import sweammingPants from "../../assets/images/sweammingPants.png";
+import cargoPants from "../../assets/images/BottomCategories/cargoPants.png";
+import sweatPants from "../../assets/images/BottomCategories/sweatPants.png";
+import jeans from "../../assets/images/BottomCategories/jeans.png";
+import skinnyJeans from "../../assets/images/BottomCategories/skinnyJeans.png";
+import suitPants from "../../assets/images/BottomCategories/suitPants.png";
+import shorts from "../../assets/images/BottomCategories/shorts.png";
+import activeShorts from "../../assets/images/BottomCategories/activeShorts.png";
+import sportsPants from "../../assets/images/BottomCategories/sportsPants.png";
+import sleepingPants from "../../assets/images/BottomCategories/sleepingPants.png";
+import sweammingPants from "../../assets/images/BottomCategories/sweammingPants.png";
 
 interface BrowseCatalogItems {
     type: string
