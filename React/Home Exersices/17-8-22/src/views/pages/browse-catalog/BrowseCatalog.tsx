@@ -101,10 +101,61 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
             type: "bottoms",
             subType: "Sweamming Pants",
             id: uuidv4()
-        }
-        
-        
-        
+        },
+        {
+            type: "shoes",
+            subType: "Sneackers",
+            id: uuidv4()
+        },
+        {
+             type: "shoes",
+             subType: "Running Shoe",
+             id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Boots",
+            id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Oxford",
+            id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Derby",
+            id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Blucher",
+            id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Loafer",
+            id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Monk",
+            id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Flip Flops",
+            id: uuidv4()
+        },
+        {
+            type: "shoes",
+            subType: "Slides",
+            id: uuidv4()
+        },
+
+
+
+
     ];
     return (
         <div className="browse-catalog">
@@ -115,11 +166,11 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
                 <h2 className="browse-catalog__header__title">{headerTitle.toLocaleUpperCase()}</h2>
             </div>
             <div className="browse-catalog__grid">
-                { catalogItems.map(item => {
-                    if(item.type === type)
-                    return (
-                        <BrowseCatalogItems type={item.subType} key={item.id}/>
-                    );
+                {catalogItems.map(item => {
+                    if (item.type === type)
+                        return (
+                            <BrowseCatalogItems type={item.subType} key={item.id} />
+                        );
                 })}
             </div>
 
