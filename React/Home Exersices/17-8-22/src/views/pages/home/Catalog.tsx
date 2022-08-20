@@ -1,16 +1,16 @@
+import { BrowserRouter, Routes, Route, Link, } from "react-router-dom";
 import CatalogItem from "./CatalogItem";
-const { v4: uuidv4 } =require ('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 
 const Catalog = () => {
-    // const catalog = ['t-shirts', 'pants', 'shoes', 'accessories'];
     const catalog = [
         {
-            type: 'tshirts',
+            type: 'tops',
             id: uuidv4()
         },
         {
-            type: 'pants',
+            type: 'bottoms',
             id: uuidv4()
         },
         {
@@ -22,11 +22,11 @@ const Catalog = () => {
             id: uuidv4()
         },
         {
-            type: 'jewelry',
+            type: 'jewellery',
             id: uuidv4()
         },
         {
-            type: 'glasses',
+            type: 'sunglasses',
             id: uuidv4()
         },
         {
@@ -42,7 +42,9 @@ const Catalog = () => {
         <div className="catalog">
             {catalog.map(item => {
                 return (
-                    <CatalogItem type={item.type} key={item.id} />
+                    <Link to={`${item.type}`}>
+                        <CatalogItem type={item.type} key={item.id} />
+                    </Link>
                 );
             })}
         </div>
