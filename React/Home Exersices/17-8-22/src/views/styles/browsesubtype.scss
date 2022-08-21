@@ -26,8 +26,10 @@
         place-items: center;
         overflow-y: scroll;
         height: 93.5%;
+        box-sizing: border-box;
+        padding: .5em 0 ;
         .browse-subtype__item {
-            width: 70%;
+            
             .item-container {
                 width: 150px;
                 height: 200px;
