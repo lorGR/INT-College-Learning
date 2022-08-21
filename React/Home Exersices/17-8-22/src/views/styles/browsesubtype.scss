@@ -28,7 +28,11 @@
         overflow-y: scroll;
         height: 93.5%;
         box-sizing: border-box;
-        padding: .5em 0 ;
+        padding: .5em 0;
+        a {
+            color: #000;
+            text-decoration: none;
+        }
         .browse-subtype__item {
             cursor: pointer;
             .item-container {
@@ -37,17 +41,13 @@
                 position: relative;
                 img {
                     width: 100%;
-                    transition: opacity .3s ease-in-out;
-                    &:hover {
-                        opacity: 1;
-                    }
                 }
                 .hover {
                     position: absolute;
                     top: 0;
                     left: 0;
                     opacity: 0;
-                    transition: opacity .3s ease-in-out;
+                    transition: opacity .5s ease-in-out;
                     &:hover {
                         opacity: 1;
                     }

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface BrowseSubTypeItem {
-    item : item
+    item: item
 }
 
 interface item {
@@ -13,25 +14,34 @@ interface item {
     description: string
 }
 
-const BrowseSubTypeItem = ({item} : BrowseSubTypeItem) => {
-    
+const BrowseSubTypeItem = ({ item }: BrowseSubTypeItem) => {
+
     const [imgUrl, setImgUrl] = useState(item.imgSrc);
-    
-    function handleMouseEnter () {
+
+    function handleMouseEnter() {
         setImgUrl(item.imgSrc2);
     }
-    function handleMouseLeave () {
+    function handleMouseLeave() {
         setImgUrl(item.imgSrc);
     }
+    function handleItem() {
+        console.log(`clicked on ${item.id}`);
+    }
     return (
-        <div className="browse-subtype__item">
-            <div className="item-container">
-                <img src={imgUrl} className="normal" alt={item.type}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
-                <img src={item.imgSrc2} className="hover" alt="" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
+        <Link to={item.id}>
+            <div className="browse-subtype__item" onClick={handleItem}>
+                <div className="item-container">
+                    <img src={item.imgSrc} className="normal" alt={item.type}
+                    // onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+                    />
+                    <img src={item.imgSrc2} className="hover" alt={item.type}
+                    // onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+                    />
+                </div>
+                <p className="browse-subtype__item__description">{item.description}</p>
+                <p className="browse-subtype__item__price">{item.price}$</p>
             </div>
-            <p className="browse-subtype__item__description">{item.description}</p>
-            <p className="browse-subtype__item__price">{item.price}$</p>
-        </div>
+        </Link>
     );
 }
 
