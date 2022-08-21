@@ -167,9 +167,10 @@ const BrowseCatalog = ({ type }: BrowseCatalogProps) => {
             </div>
             <div className="browse-catalog__grid">
                 {catalogItems.map(item => {
+                    const url = `/${item.subType}`;
                     if (item.type === type)
                         return (
-                            <Link to={item.subType} key={item.id}>
+                            <Link to={url} key={item.id}>
                                 <BrowseCatalogItems type={item.subType} key={item.id} backType={item.type}/>
                             </Link>
                         );

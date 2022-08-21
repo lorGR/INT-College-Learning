@@ -29,6 +29,9 @@
         height: 93.5%;
         box-sizing: border-box;
         padding: .5em 0;
+        &::-webkit-scrollbar{
+            display: none;
+        }
         a {
             color: #000;
             text-decoration: none;
