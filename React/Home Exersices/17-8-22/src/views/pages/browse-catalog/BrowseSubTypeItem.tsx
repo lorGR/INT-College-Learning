@@ -26,7 +26,8 @@ const BrowseSubTypeItem = ({item} : BrowseSubTypeItem) => {
     return (
         <div className="browse-subtype__item">
             <div className="item-container">
-                <img src={imgUrl} alt={item.type} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
+                <img src={imgUrl} className="normal" alt={item.type}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
+                <img src={item.imgSrc2} className="hover" alt="" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
             </div>
             <p className="browse-subtype__item__description">{item.description}</p>
             <p className="browse-subtype__item__price">{item.price}$</p>

@@ -34,8 +34,23 @@
             .item-container {
                 width: 150px;
                 height: 200px;
+                position: relative;
                 img {
                     width: 100%;
+                    transition: opacity .3s ease-in-out;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+                .hover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    transition: opacity .3s ease-in-out;
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
                 &__description{
