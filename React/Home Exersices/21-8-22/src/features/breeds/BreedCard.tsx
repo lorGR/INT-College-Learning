@@ -1,10 +1,10 @@
 import { BreedCardProps } from ".";
 
 
-const BreedCard = ({ type }: BreedCardProps) => {
+const BreedCard = ({ breed }: BreedCardProps) => {
     return (
         <div className="breed-card">
-            <h1>{type}</h1>
+            <h1>{breed.breedName}</h1>
         </div>
     );
 }
