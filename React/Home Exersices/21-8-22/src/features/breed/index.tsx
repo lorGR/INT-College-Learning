@@ -6,17 +6,19 @@ import { getBreedImages } from "./getBreedImages";
 
 
 const Breed = () => {
-    const {breedName} = useParams();
+    const { breedName } = useParams();
     const [breedImages, setImages] = useState<string[]>([]);
     useEffect(() => {
         getBreedImages(breedName).then(brdImgs => {
             setImages(brdImgs);
         })
-    },[]);
+    }, []);
     return (
-        <div className="breed container">
-            <h1>{breedName} Images:</h1>
-            {breedImages.map(breedImage => <BreedImage imgSrc={breedImage}/>)}
+        <div className="breed">
+            <h1>{breedName} breed:</h1>
+            <div className="breed-image__container">
+                {breedImages.map((breedImage, idx) => <BreedImage imgSrc={breedImage} key={idx}/>)}
+            </div>
         </div>
     );
 }
