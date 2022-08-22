@@ -1,0 +1,21 @@
+.container {
+    width: 470px;
+    margin: 0 auto;
+}
+
+.breeds {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    a{
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+        .breed-card{
+            border: 1px solid black;
+            &__image {
+                width: 100%;
+            }
+        }
+    }
+}

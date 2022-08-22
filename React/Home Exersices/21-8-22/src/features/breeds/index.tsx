@@ -23,10 +23,10 @@ const Breeds = () => {
             });
         });
     }, []);
-    console.log(breeds);
     return (
-        <div className="breeds">
-            {/* { breeds.map(breed => <BreedCard breed={breed} />)} */}
+        <div className="breeds container">
+            <h1>Dogs Breeds: {breeds.length}</h1>
+            {breeds.map((breed,idx) => <BreedCard breed={breed} key={idx}/>)}
         </div>
     );
 }
