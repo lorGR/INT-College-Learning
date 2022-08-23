@@ -18,12 +18,12 @@ const SignIn = () => {
             <h1>SignIn</h1>
             <form onSubmit={handleSignIn}>
                 <div className="form-label">
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username" autoComplete="off" />
+                    <label htmlFor="usernameSignIn">Username:</label>
+                    <input type="text" id="usernameSignIn" name="username" autoComplete="off" />
                 </div>
                 <div className="form-label">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" id="password" />
+                    <label htmlFor="passwordSignIn">Password:</label>
+                    <input type="password" name="password" id="passwordSignIn" />
                 </div>
                 <button type="submit">Login</button>
             </form>
