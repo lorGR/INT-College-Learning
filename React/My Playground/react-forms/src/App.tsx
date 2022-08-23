@@ -1,9 +1,9 @@
-import './App.css';
+import './App.scss';
 import SignIn from './features/signIn';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <SignIn />
     </div>
   );
