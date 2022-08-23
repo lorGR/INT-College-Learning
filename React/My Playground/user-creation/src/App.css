@@ -1,14 +1,5 @@
-@import './styles/form.scss';
-*{
-  box-sizing: border-box;
-}
 .App {
   text-align: center;
-}
-.container {
-  width: 470px;
-  margin: 0 auto;
-  border: 1px solid black;
 }
 
 .App-logo {
