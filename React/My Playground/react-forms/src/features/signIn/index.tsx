@@ -1,14 +1,14 @@
 import { FormEvent } from "react";
 const SignIn = () => {
-    function handleSendForm(event:FormEvent<HTMLFormElement>) {
+    function handleSignIn(event: FormEvent<HTMLFormElement>) {
         try {
             event.preventDefault();
             const { username, password } = event.target as typeof event.target & {
-                username: {value: string},
-                password: {value: string}
+                username: { value: string },
+                password: { value: string }
             }
-            console.log(username.value);
-            console.log(password.value);
+            console.log(username.value, password.value);
+            [username.value, password.value] = ["", ""];
         } catch (error) {
             console.error(error);
         }
@@ -16,10 +16,10 @@ const SignIn = () => {
     return (
         <div className="sign-in form">
             <h1>SignIn</h1>
-            <form onSubmit={handleSendForm}>
+            <form onSubmit={handleSignIn}>
                 <div className="form-label">
                     <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username" autoComplete="off"/>
+                    <input type="text" id="username" name="username" autoComplete="off" />
                 </div>
                 <div className="form-label">
                     <label htmlFor="password">Password:</label>
