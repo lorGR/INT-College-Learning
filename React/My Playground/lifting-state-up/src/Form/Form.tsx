@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { Attributes, useState } from "react";
 
-const Form = () => {
+interface FormProps {
+    onSubmit: any
+}
+
+const Form: React.FC<FormProps> = (props) => {
 
     const [user, setUser] = useState<string>("");
 
@@ -10,6 +14,7 @@ const Form = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        props.onSubmit(user)
     }
 
     return (
