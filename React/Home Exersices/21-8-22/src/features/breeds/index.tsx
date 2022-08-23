@@ -18,7 +18,7 @@ const Breeds = () => {
         getBreeds().then(brds => {
             brds.forEach(brd => {
                 getBreedsImage(brd).then(brdImg => {
-                    setBreeds(prevState => ([...prevState, { breedName: brd, breedImage: brdImg}]))
+                    setBreeds(prevState => ([...prevState, { breedName: brd, breedImage: brdImg }]))
                 })
             });
         });
@@ -26,7 +26,7 @@ const Breeds = () => {
     return (
         <div className="breeds container">
             <h1>Dogs Breeds: {breeds.length}</h1>
-            {breeds.map((breed,idx) => <BreedCard breed={breed} key={idx}/>)}
+            {breeds.map((breed, idx) => <BreedCard breed={breed} key={idx} />)}
         </div>
     );
 }
