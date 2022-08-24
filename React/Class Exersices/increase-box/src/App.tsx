@@ -32,7 +32,7 @@ function App() {
       <label htmlFor="rotateY">Rotate On X axis:</label>
       <input type="range" name="rotateY" id="rotateY" onChange={handleRotateX} min="0" max="360"/>
 
-      <label htmlFor="rotationBox">Rotation</label>
+      <label htmlFor="rotationBox">Rotation:</label>
       <input type="range" name='rotationBox' id='rotation' onChange={handleRotation} min="0" max="360"/>
 
       <div className='myBox' style={{width: boxWidth, height: boxWidth, transform: boxRotation  }}></div>
