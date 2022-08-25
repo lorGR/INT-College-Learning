@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <label htmlFor="sizeBox">Width</label>
+      <label htmlFor="sizeBox">Width:</label>
       <input type="range" name="sizeBox" id="size" onChange={handleSize} min="400" max="800"/>
 
       <label htmlFor="rotateY">Rotate On Y axis:</label>
