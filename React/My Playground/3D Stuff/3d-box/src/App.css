@@ -11,5 +11,59 @@ body {
   height: 300px;
   border: thin solid lime;
   margin: 300px auto;
+  perspective: 600px;
 }
+
+.cube {
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: translateZ(-150px);
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.cube:hover {
+  transform: translateZ(-150px) rotateY(360deg) rotateZ(360deg);
+}
+
+.face {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+}
+
+.front {
+  background: white;
+  transform: rotateY(0deg) translateZ(150px);
+}
+
+.right {
+  background: red;
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+.back {
+  background: orange;
+  transform: rotateY(180deg) translateZ(150px);
+}
+
+.left {
+  background: yellow;
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+  background: blue;
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+  background: purple;
+  transform: rotateX(-90deg) translateZ(150px);
+}
+
 
