@@ -569,14 +569,21 @@ scene.add(axesHelper);
 // Explanation soon
 const boxGeometry = new _three.BoxGeometry();
 const boxMaterial = new _three.MeshBasicMaterial({
-    color: 0x00FF00
+    color: 0xFFFF00
 });
 const box = new _three.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
 // Add geometrical rotation to the box
-box.rotation;
-// Link the Scene with the Camera using render method on renderer
-renderer.render(scene, camera);
+// box.rotation.x = 5;
+// box.rotation.y = 10;
+function animate(time) {
+    // With the argument time we can change the speed of animation
+    box.rotation.x = time / 2500;
+    box.rotation.y = time / 2500;
+    // Link the Scene with the Camera using render method on renderer
+    renderer.render(scene, camera);
+}
+renderer.setAnimationLoop(animate);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

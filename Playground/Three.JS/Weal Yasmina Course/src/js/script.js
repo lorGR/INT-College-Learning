@@ -48,12 +48,20 @@ scene.add(axesHelper);
 
 // Explanation soon
 const boxGeometry = new THREE.BoxGeometry();
-const boxMaterial = new THREE.MeshBasicMaterial({color: 0x00FF00});
+const boxMaterial = new THREE.MeshBasicMaterial({color: 0xFFFF00});
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
 
 // Add geometrical rotation to the box
-box.rotation
+// box.rotation.x = 5;
+// box.rotation.y = 10;
 
-// Link the Scene with the Camera using render method on renderer
-renderer.render(scene, camera);
+function animate(time) {
+    // With the argument time we can change the speed of animation
+    box.rotation.x = time / 2500;
+    box.rotation.y = time / 2500;
+    // Link the Scene with the Camera using render method on renderer
+    renderer.render(scene, camera);
+}
+
+renderer.setAnimationLoop(animate);
