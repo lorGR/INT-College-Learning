@@ -52,5 +52,8 @@ const boxMaterial = new THREE.MeshBasicMaterial({color: 0x00FF00});
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
 
+// Add geometrical rotation to the box
+box.rotation
+
 // Link the Scene with the Camera using render method on renderer
 renderer.render(scene, camera);
