@@ -3,6 +3,9 @@
 
 import * as THREE from 'three';
 
+// Giving the ability to move the camera in the web to see the scene from different angles.
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+
 // Create instance of WebGL renderer
 // Tool to locate a space on web page
 // Where we can add and animate all 3d stuff.
@@ -36,7 +39,19 @@ const camera = new THREE.PerspectiveCamera(
 // camera.position.x = 0;
 
 // Setting camera position by 3 values (X, Y, Z)
-camera.position.set(0,2,8);
+camera.position.set(0,2,5);
+
+//*********************NOT-WORKING*************************//
+//                                                         //
+//          Make sure to call the update method            //
+//      Every time we change the position of the camera    //
+//                    orbit.update();                      //
+//                                                         //
+//*********************NOT-WORKING*************************//
+
+// Create Instance of orbit controls
+// Pass the camera and the renderer dom element as arguments.
+const orbit = new OrbitControls(camera, renderer.domElement);
 
 // Create Instance of axes Helper
 // Tool that serves as a guide.
