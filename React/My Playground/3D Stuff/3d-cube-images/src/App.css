@@ -1,0 +1,114 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  background-color: #444;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 600px;
+  height: 600px;
+  perspective: 600px;
+}
+
+.cube {
+  width: 600px;
+  height: 600px;
+  transform-style: preserve-3d;
+  transform: translateZ(-300px);
+  position: relative;
+  transition: all 1s ease-in-out;
+  animation: cube-spin infinite 5s linear;
+}
+
+@keyframes cube-spin {
+  from {
+    transform: translateZ(-300px) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateZ(-300px) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.faces {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+}
+
+.front {
+  background-color: red;
+  transform: rotateY(0deg) translateZ(300px);
+}
+
+.right {
+  background-color: orange;
+  transform: rotateY(90deg) translateZ(300px);
+}
+
+.back {
+  background-color: yellow;
+  transform: rotateY(180deg) translateZ(300px);
+}
+
+.left {
+  background-color: greenyellow;
+  transform: rotateY(-90deg) translateZ(300px);
+}
+
+.top {
+  background-color: green;
+  transform: rotateX(90deg) translateZ(300px);
+}
+
+.bottom {
+  background-color: blue;
+  transform: rotateX(-90deg) translateZ(300px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
