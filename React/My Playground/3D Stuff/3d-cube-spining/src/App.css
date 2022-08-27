@@ -19,7 +19,7 @@
   transform: translateZ(-300px);
   position: relative;
   transition: all 1s ease-in-out;
-  animation: cube-spin infinite 5s linear;
+  animation: cube-spin infinite 10s linear;
 }
 
 @keyframes cube-spin {
