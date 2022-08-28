@@ -28,7 +28,7 @@ const scene = new THREE.Scene();
 // Camera default point is 0,0,0
 const camera = new THREE.PerspectiveCamera(
     45, // FOV - usually between 40 - 80
-    window.innerWidth/ window.innerHeight, // Aspet Ratio
+    window.innerWidth / window.innerHeight, // Aspet Ratio
     0.1, // Near
     1000 // Far
 );
@@ -39,7 +39,7 @@ const camera = new THREE.PerspectiveCamera(
 // camera.position.x = 0;
 
 // Setting camera position by 3 values (X, Y, Z)
-camera.position.set(-10,30,30);
+camera.position.set(-10, 30, 30);
 
 //*********************NOT-WORKING*************************//
 //                                                         //
@@ -66,9 +66,10 @@ scene.add(axesHelper);
 // 2 - Creation of material.
 // 3 - Cover the geometry with the material.
 const boxGeometry = new THREE.BoxGeometry();
-const boxMaterial = new THREE.MeshBasicMaterial({color: 0xFFFF00});
+const boxMaterial = new THREE.MeshBasicMaterial({ color: 0xFFFF00 });
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
+box.position.set(0,3,0)
 
 const planGeometry = new THREE.PlaneGeometry(30, 30);
 const planeMaterial = new THREE.MeshBasicMaterial({
@@ -79,6 +80,15 @@ const plane = new THREE.Mesh(planGeometry, planeMaterial);
 scene.add(plane);
 // Rotate plane to the ground of the grid
 plane.rotation.x = Math.PI * -0.5; // PI in trigo is equals to 180degs * -0.5 = -90deg.
+
+const sphereGeometry = new THREE.SphereGeometry(4, 50, 50);
+const sphereMaterial = new THREE.MeshBasicMaterial({
+    color: 0x0000ff,
+    wireframe: false
+});
+const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+scene.add(sphere);
+sphere.position.set(5,4,0);
 
 // Add Grid Instance to help us see better
 const gridHelper = new THREE.GridHelper(30); // Second agrument we can pass gives smaller cubes of grid.
