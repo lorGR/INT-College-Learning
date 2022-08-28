@@ -84,7 +84,7 @@ plane.rotation.x = Math.PI * -0.5; // PI in trigo is equals to 180degs * -0.5 = 
 const sphereGeometry = new THREE.SphereGeometry(4, 50, 50);
 const sphereMaterial = new THREE.MeshBasicMaterial({
     color: 0x0000ff,
-    wireframe: false
+    wireframe: true
 });
 const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 scene.add(sphere);
