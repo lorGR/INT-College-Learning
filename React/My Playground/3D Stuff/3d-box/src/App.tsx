@@ -14,12 +14,22 @@ function App() {
       <input onChange={handleChnage} type="range" name="cubeRotation" id="cubeRotation" min="0" max="360" />
       <div className="container">
         <div className="cube" style={{transform: cubeRotation}}>
-          <div className="face front">1</div>
-          <div className="face right">2</div>
-          <div className="face back">3</div>
-          <div className="face left">4</div>
-          <div className="face top">5</div>
-          <div className="face bottom">6</div>
+          <div className="face front">
+            <img src="https://thumbs.dreamstime.com/b/wooden-crate-front-view-cargo-box-texture-d-rendering-205221256.jpg" alt="box" />
+          </div>
+          <div className="face right">
+          <img src="https://thumbs.dreamstime.com/b/wooden-crate-front-view-cargo-box-texture-d-rendering-205221256.jpg" alt="box" />
+          </div>
+          <div className="face back">
+          <img src="https://thumbs.dreamstime.com/b/wooden-crate-front-view-cargo-box-texture-d-rendering-205221256.jpg" alt="box" />
+          </div>
+          <div className="face left">
+          <img src="https://thumbs.dreamstime.com/b/wooden-crate-front-view-cargo-box-texture-d-rendering-205221256.jpg" alt="box" />
+          </div>
+          <div className="face top"><img src="https://thumbs.dreamstime.com/b/wooden-crate-front-view-cargo-box-texture-d-rendering-205221256.jpg" alt="box" /></div>
+          <div className="face bottom">
+          <img src="https://thumbs.dreamstime.com/b/wooden-crate-front-view-cargo-box-texture-d-rendering-205221256.jpg" alt="box" />
+          </div>
         </div>
       </div>
     </div>

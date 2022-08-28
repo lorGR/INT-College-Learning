@@ -35,6 +35,10 @@ body {
   font-size: 5rem;
 }
 
+.face img {
+  width: 100%;
+}
+
 .front {
   background: white;
   transform: rotateY(0deg) translateZ(150px);
