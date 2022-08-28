@@ -27,7 +27,7 @@ const scene = new THREE.Scene();
 // 4 - Far = The farthest point from the camera.
 // Camera default point is 0,0,0
 const camera = new THREE.PerspectiveCamera(
-    75, // FOV - usually between 40 - 80
+    45, // FOV - usually between 40 - 80
     window.innerWidth/ window.innerHeight, // Aspet Ratio
     0.1, // Near
     1000 // Far
@@ -39,7 +39,7 @@ const camera = new THREE.PerspectiveCamera(
 // camera.position.x = 0;
 
 // Setting camera position by 3 values (X, Y, Z)
-camera.position.set(0,2,5);
+camera.position.set(-10,30,30);
 
 //*********************NOT-WORKING*************************//
 //                                                         //
@@ -57,15 +57,32 @@ const orbit = new OrbitControls(camera, renderer.domElement);
 // Tool that serves as a guide.
 // Introduces the 3d coordinate system.
 // accepts number that will show the length of each axis.
-const axesHelper = new THREE.AxesHelper(3);
+const axesHelper = new THREE.AxesHelper(1500);
 //add the axesHelper to the Scene with add method on Scene.
 scene.add(axesHelper);
 
-// Explanation soon
+// Creation of an elemnt in Three.js happens in 3 phases:
+// 1 - Creation of geometry.
+// 2 - Creation of material.
+// 3 - Cover the geometry with the material.
 const boxGeometry = new THREE.BoxGeometry();
 const boxMaterial = new THREE.MeshBasicMaterial({color: 0xFFFF00});
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
+
+const planGeometry = new THREE.PlaneGeometry(30, 30);
+const planeMaterial = new THREE.MeshBasicMaterial({
+    color: 0xFFFFFF,
+    side: THREE.DoubleSide // Giving the ability to see the mesh from front and back.
+});
+const plane = new THREE.Mesh(planGeometry, planeMaterial);
+scene.add(plane);
+// Rotate plane to the ground of the grid
+plane.rotation.x = Math.PI * -0.5; // PI in trigo is equals to 180degs * -0.5 = -90deg.
+
+// Add Grid Instance to help us see better
+const gridHelper = new THREE.GridHelper(30); // Second agrument we can pass gives smaller cubes of grid.
+scene.add(gridHelper);
 
 // Add geometrical rotation to the box
 // box.rotation.x = 5;
