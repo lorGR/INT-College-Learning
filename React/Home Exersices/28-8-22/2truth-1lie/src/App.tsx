@@ -12,21 +12,25 @@ import Register from "./features/Forms/Register";
 
 import './App.scss';
 
-interface User {
+export interface User {
   email: string,
   username: string,
-  password: string
+  password: string,
+  id: string
 }
 
 function App() {
   const [usersList, setUsersList] = useState<User[]>([]);
+  const getUserData = (user: User) => {
+    console.log(user);
+  }
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />}/>
+          <Route path="/register" element={<Register onSubmit={getUserData}/>}/>
         </Routes>
       </BrowserRouter>
     </div>

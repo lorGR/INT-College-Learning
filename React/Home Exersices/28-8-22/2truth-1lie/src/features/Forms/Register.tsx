@@ -1,23 +1,50 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Register = () => {
-    const handleChnage = (e: React.ChangeEvent<HTMLInputElement>) => {
+import { User } from "../../App";
+
+interface RegisterProps {
+    onSubmit: CallableFunction
+}
+
+const Register: React.FC<RegisterProps> = (props) => {
+    const [user, setUser] = useState<User>({
+        email: "",
+        username: "",
+        password: "",
+        id: ""
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         try {
-            
+            setUser(prevState => ({
+                ...prevState,
+                [e.target.name]: e.target.value
+            }));    
         } catch (error) {
             console.error(error);
         }
-    }    
+    }
+
+    const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
+        try {
+            e.preventDefault();
+            props.onSubmit(user);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <div className="register">
             <h1>Register</h1>
-            <form>
+            <form onSubmit={handleRegister}>
                 <label htmlFor="email">Email:</label>
-                <input onChange={handleChnage} type="email" name="email" id="email" />
+                <input onChange={handleChange} type="email" name="email" id="email" />
                 <label htmlFor="username">Username:</label>
-                <input type="text" name="username" id="username" />
+                <input onChange={handleChange}  type="text" name="username" id="username" />
                 <label htmlFor="password">Password:</label>
-                <input type="password" name="password" id="password" />
+                <input onChange={handleChange}  type="password" name="password" id="password" />
                 <button type="submit">Register</button>
             </form>
             <p>Already a member?
