@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   BrowserRouter,
   Routes,
@@ -10,14 +12,21 @@ import Register from "./features/Forms/Register";
 
 import './App.scss';
 
+interface User {
+  email: string,
+  username: string,
+  password: string
+}
+
 function App() {
+  const [usersList, setUsersList] = useState<User[]>([]);
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />}/>          
+          <Route path="/register" element={<Register />}/>
         </Routes>
       </BrowserRouter>
     </div>
