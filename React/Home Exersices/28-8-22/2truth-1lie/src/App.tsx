@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 import {
   BrowserRouter,
   Routes,
@@ -20,9 +21,18 @@ export interface User {
 }
 
 function App() {
+  const { v4: uuidv4 } = require('uuid');
   const [usersList, setUsersList] = useState<User[]>([]);
   const getUserData = (user: User) => {
-    console.log(user);
+    const existUser = usersList.find(userInList => userInList.email === user.email);
+    if(existUser) {
+      console.log("Username is already exist");
+    }
+    setUsersList(prevState => ([
+      ...prevState,
+      {username: user.username, email: user.email, password: user.password, id: uuidv4()}
+    ]));
+    console.log(usersList);
   }
   return (
     <div className="App">
