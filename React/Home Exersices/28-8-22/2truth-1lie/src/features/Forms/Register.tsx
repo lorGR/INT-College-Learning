@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { User } from "../../App";
 
 interface RegisterProps {
+    users: Array<User>,
     onSubmit: CallableFunction
 }
 
@@ -29,7 +30,13 @@ const Register: React.FC<RegisterProps> = (props) => {
     const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault();
-            props.onSubmit(user);
+            const avalibleEmail = props.users.find(userInList => userInList.email === user.email);
+            if (avalibleEmail) {
+                alert("Email already in use");
+            } else {
+                props.onSubmit(user);
+                
+            }
         } catch (error) {
             console.error(error);
         }
