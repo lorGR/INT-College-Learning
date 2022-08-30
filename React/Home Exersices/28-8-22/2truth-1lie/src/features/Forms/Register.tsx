@@ -9,6 +9,9 @@ interface RegisterProps {
 }
 
 const Register: React.FC<RegisterProps> = (props) => {
+
+    const { v4: uuidv4 } = require('uuid');
+
     const [user, setUser] = useState<User>({
         email: "",
         username: "",
@@ -20,7 +23,8 @@ const Register: React.FC<RegisterProps> = (props) => {
         try {
             setUser(prevState => ({
                 ...prevState,
-                [e.target.name]: e.target.value
+                [e.target.name]: e.target.value,
+                id: uuidv4()
             }));    
         } catch (error) {
             console.error(error);

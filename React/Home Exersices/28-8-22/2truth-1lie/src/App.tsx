@@ -22,15 +22,11 @@ export interface User {
 }
 
 function App() {
-  const { v4: uuidv4 } = require('uuid');
+  
   const [usersList, setUsersList] = useState<User[]>([]);
   const addUser = (user: User) => {
-    setUsersList(prevState => ([
-      ...prevState,
-      { username: user.username, email: user.email, password: user.password, id: uuidv4() }
-    ]));
+    setUsersList(prevState => ([...prevState,user]));
   }
-  console.log(usersList);
   return (
     <div className="App">
       <BrowserRouter>
