@@ -14,6 +14,7 @@ import Register from "./features/Forms/Register";
 
 import './App.scss';
 import SecretsContainer from './features/Secrets/SecretsContainer';
+import Secret from './features/Secrets/Secret';
 
 export interface User {
   email: string,
