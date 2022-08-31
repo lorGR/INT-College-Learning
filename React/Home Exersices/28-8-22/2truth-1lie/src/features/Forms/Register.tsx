@@ -25,7 +25,7 @@ const Register: React.FC<RegisterProps> = (props) => {
                 ...prevState,
                 [e.target.name]: e.target.value,
                 id: uuidv4()
-            }));    
+            }));
         } catch (error) {
             console.error(error);
         }
@@ -49,14 +49,14 @@ const Register: React.FC<RegisterProps> = (props) => {
     return (
         <div className="register">
             <h1>Register</h1>
-            { errorMessage ? <p>{errorMessage}</p> : null}
+            {errorMessage ? <p>{errorMessage}</p> : null}
             <form onSubmit={handleRegister}>
                 <label htmlFor="email">Email:</label>
                 <input onChange={handleChange} type="email" name="email" id="email" />
                 <label htmlFor="username">Username:</label>
-                <input onChange={handleChange}  type="text" name="username" id="username" />
+                <input onChange={handleChange} type="text" name="username" id="username" />
                 <label htmlFor="password">Password:</label>
-                <input onChange={handleChange}  type="password" name="password" id="password" />
+                <input onChange={handleChange} type="password" name="password" id="password" />
                 <button type="submit">Register</button>
             </form>
             <p>Already a member?
