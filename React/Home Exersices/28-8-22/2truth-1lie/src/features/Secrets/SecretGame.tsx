@@ -6,7 +6,7 @@ interface SecretProps {
     secrets: Array<Secret>
 }
 
-const Secret: React.FC<SecretProps> = (props) => {
+const SecretGame: React.FC<SecretProps> = (props) => {
 
     const { secretId } = useParams();
     const [secret , setSecret] = useState<Secret>();
@@ -22,9 +22,13 @@ const Secret: React.FC<SecretProps> = (props) => {
         <div className="secret">
             <h1>Secret {secretId}</h1>
             <p>Guess the 2 correct statements</p>
-
+            {secret?.statements.map(statement => 
+                <div key={statement.id}>
+                    {statement.statement}
+                </div>
+            )}
         </div>
     );
 }
 
-export default Secret;
+export default SecretGame;
