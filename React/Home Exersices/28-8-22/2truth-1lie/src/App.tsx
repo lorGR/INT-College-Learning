@@ -5,16 +5,15 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
 
 import Main from "./features/Main/Main";
 import Login from "./features/Forms/Login";
 import Register from "./features/Forms/Register";
 import SecretsContainer from './features/Secrets/SecretsContainer';
+import Secret from './features/Secrets/Secret';
 
 import './App.scss';
-import Secret from './features/Secrets/Secret';
 
 export interface User {
   email: string,
@@ -115,7 +114,7 @@ function App() {
           <Route path="/login" element={<Login usersList={usersList} />} />
           <Route path="/register" element={<Register usersList={usersList} onSubmit={addUser} />} />
           <Route path="/user/:userId" element={<SecretsContainer usersList={usersList} secrets={secrets} />} />
-          <Route path="user/:userId/:secretId" element={<Secret />} />
+          <Route path="user/:userId/:secretId" element={<Secret secrets={secrets} />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Secret, User } from "../../App";
 
 interface SecretContainerProps {
@@ -8,9 +8,6 @@ interface SecretContainerProps {
 }
 
 const SecretsContainer: React.FC<SecretContainerProps> = (props) => {
-
-    const navigate = useNavigate();
-
     const [user, setUser] = useState<User>();
     const { userId } = useParams()
 
