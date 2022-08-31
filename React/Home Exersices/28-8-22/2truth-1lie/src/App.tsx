@@ -63,18 +63,18 @@ const secrets: Array<Secret> = [
     statements: [
       {
         id: "2-1",
-        statement: "When I was 4 years old my hair was blond",
-        isTrue: false,
+        statement: "When I was younger I wanted to be a lawyer",
+        isTrue: true,
       },
       {
         id: "2-2",
-        statement: "I am 23 years old with black hair",
+        statement: "I had two earrings in my ears",
         isTrue: true
       },
       {
         id: "2-3",
-        statement: "When I was 18 years old my hair was blond",
-        isTrue: true
+        statement: "I have two tattos",
+        isTrue: false
       }
     ]
   },
@@ -84,17 +84,17 @@ const secrets: Array<Secret> = [
     statements: [
       {
         id: "3-1",
-        statement: "When I was 4 years old my hair was blond",
-        isTrue: false,
+        statement: "I almost lost my right eye in third grade",
+        isTrue: true,
       },
       {
         id: "3-2",
-        statement: "I am 23 years old with black hair",
-        isTrue: true
+        statement: "I almost broke my right arm in third grade",
+        isTrue: false
       },
       {
         id: "3-3",
-        statement: "When I was 18 years old my hair was blond",
+        statement: "When I was born I had a lack of oxygen",
         isTrue: true
       }
     ]
