@@ -13,6 +13,7 @@ import Login from "./features/Forms/Login";
 import Register from "./features/Forms/Register";
 
 import './App.scss';
+import SecretsContainer from './features/Secrets/SecretsContainer';
 
 export interface User {
   email: string,
@@ -32,8 +33,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register users={usersList} onSubmit={addUser} />} />
+          <Route path="/login" element={<Login usersList={usersList}/>} />
+          <Route path="/register" element={<Register usersList={usersList} onSubmit={addUser} />} />
+          <Route path="/user/:userId" element={<SecretsContainer usersList={usersList}/>}/>
         </Routes>
       </BrowserRouter>
     </div>

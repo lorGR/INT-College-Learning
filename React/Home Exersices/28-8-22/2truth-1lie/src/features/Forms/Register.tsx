@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { User } from "../../App";
 
 interface RegisterProps {
-    users: Array<User>,
+    usersList: Array<User>,
     onSubmit: CallableFunction
 }
 
 const Register: React.FC<RegisterProps> = (props) => {
-
+    const navigate = useNavigate()
     const { v4: uuidv4 } = require('uuid');
-
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [user, setUser] = useState<User>({
         email: "",
         username: "",
@@ -34,12 +34,12 @@ const Register: React.FC<RegisterProps> = (props) => {
     const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault();
-            const avalibleEmail = props.users.find(userInList => userInList.email === user.email);
-            if (avalibleEmail) {
-                alert("Email already in use");
+            const emailInUse = props.usersList.find(userInList => userInList.email === user.email);
+            if (emailInUse) {
+                setErrorMessage("Email is already in use");
             } else {
                 props.onSubmit(user);
-                
+                navigate("/login");
             }
         } catch (error) {
             console.error(error);
@@ -49,6 +49,7 @@ const Register: React.FC<RegisterProps> = (props) => {
     return (
         <div className="register">
             <h1>Register</h1>
+            { errorMessage ? <p>{errorMessage}</p> : null}
             <form onSubmit={handleRegister}>
                 <label htmlFor="email">Email:</label>
                 <input onChange={handleChange} type="email" name="email" id="email" />
