@@ -1,17 +1,14 @@
-import { Secret } from "./SecretsContainer";
+import { useParams } from "react-router-dom";
 
-interface SecretProps {
-    secret: Secret
-}
+const Secret = () => {
 
-const Secret: React.FC<SecretProps> = ({secret}) => {
-    return (
+    const {secretId} = useParams();
+    console.log(secretId);
+    return(
         <div className="secret">
-            <h1>Welcome To {secret.title}</h1>
-            <p>Guess the 2 correct statements!</p>
-            {secret.statements.map(state => <div>{state.statement}</div>)}
+            <h1>Secret</h1>
         </div>
     );
-}
+} 
 
 export default Secret;
