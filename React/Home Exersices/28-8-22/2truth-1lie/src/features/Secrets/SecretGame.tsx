@@ -10,6 +10,8 @@ const SecretGame: React.FC<SecretProps> = (props) => {
 
     const { secretId } = useParams();
     const [secret , setSecret] = useState<Secret>();
+    const [life, setLife] = useState<number>(2);
+    const [points, setPoints] = useState<number>(0);
 
     useEffect(() => {
         const exsitSecret = props.secrets.find( secret => secret.id === secretId);
@@ -27,23 +29,35 @@ const SecretGame: React.FC<SecretProps> = (props) => {
             const statement = secret?.statements.find(state => state.id === statementId);
             if(statement?.isTrue) {
                 button.style.backgroundColor = "green";
+                setLife(life - 1 );
+                setPoints(points + 1);
             } else {
                 button.style.backgroundColor = "red";
+                setLife(0);
             }
         } catch (error) {
             console.error(error);
         }
     }
-
+    if (life > 0) {
+        return (
+            <div className="secret">
+                <h1>Secret {secretId}</h1>
+                <p>Guess the 2 correct statements</p>
+                {secret?.statements.map(statement => 
+                    <div className="secret__box" key={statement.id}>
+                        <button id={statement.id} onClick={handleClick}>{statement.statement}</button>
+                    </div>
+                )}
+            </div>
+        );
+    }
     return (
-        <div className="secret">
-            <h1>Secret {secretId}</h1>
-            <p>Guess the 2 correct statements</p>
-            {secret?.statements.map(statement => 
-                <div className="secret__box" key={statement.id}>
-                    <button id={statement.id} onClick={handleClick}>{statement.statement}</button>
-                </div>
-            )}
+        <div>
+            <h1>Game Over</h1>
+            { points === 2 && <h2> You Win </h2>}
+            { points === 1 && <h2> It's a Tie</h2>}
+            { points === 0 && <h2> You Lost</h2>}
         </div>
     );
 }
