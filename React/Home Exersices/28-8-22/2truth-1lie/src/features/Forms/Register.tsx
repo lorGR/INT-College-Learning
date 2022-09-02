@@ -31,6 +31,7 @@ const Register: React.FC<RegisterProps> = (props) => {
         }
     }
 
+
     const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault();
