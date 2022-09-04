@@ -12,7 +12,7 @@ const SecretGame: React.FC<SecretProps> = (props) => {
     const [secret, setSecret] = useState<Secret>();
     const [life, setLife] = useState<number>(2);
     const [points, setPoints] = useState<number>(0);
-    // const []
+    const [isWinnier, setIsWinner] = useState<string>("")
 
     useEffect(() => {
         const exsitSecret = props.secrets.find(secret => secret.id === secretId);
@@ -42,6 +42,7 @@ const SecretGame: React.FC<SecretProps> = (props) => {
     }
     const lieState = secret?.statements.find(state => state.isTrue === false);
     const truthStates = secret?.statements.filter(state => state.isTrue === true);
+
     if (life > 0) {
         return (
             <div className="secret">
@@ -54,30 +55,26 @@ const SecretGame: React.FC<SecretProps> = (props) => {
                 )}
             </div>
         );
-    } else if (points === 2) {
-        return (
-            <div>
-                <h1>Game Over</h1>
-                <h2>You Win</h2>
-                <div className="secret__box">
-                    <button>{lieState?.statement}</button>
-                </div>
-                <h2>This was the lie</h2>
-                {truthStates?.map(state =>
-                    <div className="secret__box" key={state.id}>
-                        <button>{state?.statement}</button>
-                    </div>
-                )}
-            </div>
-        );
     }
     return (
         <div>
             <h1>Game Over</h1>
-            {points === 1 && <h2> It's a Tie</h2>}
-            {points === 0 && <h2> You Lost</h2>}
+            {points === 2 && <h2>You win</h2>}
+            {points === 1 && <h2>Tie</h2>}
+            {points === 0 && <h2>You Lost</h2>} 
+            <h2>This was the lie</h2>
+            <div className="secret__box">
+                <button>{lieState?.statement}</button>
+            </div>
+            <h2>Those are the facts</h2>
+            {truthStates?.map(state =>
+                <div className="secret__box" key={state.id}>
+                    <button>{state?.statement}</button>
+                </div>
+            )}
         </div>
     );
+
 }
 
 export default SecretGame;
