@@ -39,6 +39,8 @@ const SecretGame: React.FC<SecretProps> = (props) => {
             console.error(error);
         }
     }
+    const lieState = secret?.statements.find(state => state.isTrue === false);
+    const truthStates = secret?.statements.filter(state => state.isTrue === true);
     if (life > 0) {
         return (
             <div className="secret">
@@ -52,14 +54,31 @@ const SecretGame: React.FC<SecretProps> = (props) => {
             </div>
         );
     }
-    return (
-        <div>
-            <h1>Game Over</h1>
-            {points === 2 && <h2> You Win </h2>}
-            {points === 1 && <h2> It's a Tie</h2>}
-            {points === 0 && <h2> You Lost</h2>}
-        </div>
-    );
+    if (points === 2) {
+        console.log(truthStates);
+        return (
+            <div>
+                <h1>Game Over</h1>
+                <h2>You Win</h2>
+                <div className="secret__box">
+                    <button>{lieState?.statement}</button>
+                </div>
+                <h2>This was the lie</h2>
+                {truthStates?.map(state => 
+                    <div className="secret__box">
+                        <button>{state?.statement}</button>
+                    </div>
+                )}
+            </div>
+        );
+    }
+return (
+    <div>
+        <h1>Game Over</h1>
+        {points === 1 && <h2> It's a Tie</h2>}
+        {points === 0 && <h2> You Lost</h2>}
+    </div>
+);
 }
 
 export default SecretGame;
