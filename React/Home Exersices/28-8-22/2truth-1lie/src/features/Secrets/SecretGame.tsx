@@ -12,6 +12,7 @@ const SecretGame: React.FC<SecretProps> = (props) => {
     const [secret, setSecret] = useState<Secret>();
     const [life, setLife] = useState<number>(2);
     const [points, setPoints] = useState<number>(0);
+    // const []
 
     useEffect(() => {
         const exsitSecret = props.secrets.find(secret => secret.id === secretId);
@@ -53,9 +54,7 @@ const SecretGame: React.FC<SecretProps> = (props) => {
                 )}
             </div>
         );
-    }
-    if (points === 2) {
-        console.log(truthStates);
+    } else if (points === 2) {
         return (
             <div>
                 <h1>Game Over</h1>
@@ -64,21 +63,21 @@ const SecretGame: React.FC<SecretProps> = (props) => {
                     <button>{lieState?.statement}</button>
                 </div>
                 <h2>This was the lie</h2>
-                {truthStates?.map(state => 
-                    <div className="secret__box">
+                {truthStates?.map(state =>
+                    <div className="secret__box" key={state.id}>
                         <button>{state?.statement}</button>
                     </div>
                 )}
             </div>
         );
     }
-return (
-    <div>
-        <h1>Game Over</h1>
-        {points === 1 && <h2> It's a Tie</h2>}
-        {points === 0 && <h2> You Lost</h2>}
-    </div>
-);
+    return (
+        <div>
+            <h1>Game Over</h1>
+            {points === 1 && <h2> It's a Tie</h2>}
+            {points === 0 && <h2> You Lost</h2>}
+        </div>
+    );
 }
 
 export default SecretGame;
