@@ -29,7 +29,7 @@ const Form: React.FC<FormProps> = (props) => {
     return (
         <form className="form" onSubmit={handleSendMessage}>
             <input type="checkbox" name="otherUser" id="otherUser" />
-            <input className="form__input" type="text" placeholder="Type a message" name="messageInput"/>
+            <input className="form__input" type="text" placeholder="Type a message" name="messageInput" autoComplete="off"/>
             <button className="form__button" type="submit"><FontAwesomeIcon icon={faChevronRight} size="2x" color="#65747E" /></button>
         </form>
     );
