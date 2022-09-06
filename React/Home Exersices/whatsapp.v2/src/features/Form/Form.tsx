@@ -18,7 +18,7 @@ const Form: React.FC<FormProps> = (props) => {
                     dateTime: `${new Date().getHours()}:${new Date().getMinutes()}`
                 }
                 props.sendData(message);
-                e.target.elements.messageInput.value = '';            
+                e.target.elements.messageInput.value = '';      
             }
         } catch (error) {
             console.error(error);
