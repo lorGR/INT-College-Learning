@@ -6,7 +6,8 @@ import Form from "./features/Form/Form";
 
 export interface Message {
   message: string,
-  dateTime: string
+  dateTime: string,
+  otherUser: boolean
 }
 
 function App() {
