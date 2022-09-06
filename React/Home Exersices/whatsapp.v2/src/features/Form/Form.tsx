@@ -12,12 +12,14 @@ const Form: React.FC<FormProps> = (props) => {
     const handleSendMessage = (e: React.FormEvent<HTMLFormElement> | any) => {
         try {
             e.preventDefault();
-            const message : Message = {
-                message: e.target.elements.messageInput.value,
-                dateTime: `${new Date().getHours()}:${new Date().getMinutes()}`
+            if(e.target.elements.messageInput.value.length > 0) {
+                const message : Message = {
+                    message: e.target.elements.messageInput.value,
+                    dateTime: `${new Date().getHours()}:${new Date().getMinutes()}`
+                }
+                props.sendData(message);
+                e.target.elements.messageInput.value = '';            
             }
-            props.sendData(message);
-            e.target.elements.messageInput.value = '';            
         } catch (error) {
             console.error(error);
         }
