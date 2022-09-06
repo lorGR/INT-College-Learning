@@ -1,0 +1,18 @@
+@import './features/Screen/Screen.scss';
+@import './features/Form/Form.scss';
+@import './features/ChatBox/ChatBox.scss';
+*{
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
+  height: 93vh;
+  background-image: url("https://www.wallpapertip.com/wmimgs/106-1060152_world-s-okayest-bard-i-made-a-d.png");
+  .filler {
+    height: 10vh;
+    width: 100vw;
+  }
+}
+
