@@ -12,17 +12,19 @@ export interface Message {
 
 function App() {
   const [ messages, setMessages] = useState<Message[]>([]);
-  const handleGetData = (message: Message) => {
+
+  const addMessage = (message: Message) => {
     try {
-      setMessages(prevState => ([...prevState,message]));
+      setMessages(prevMessages => ([...prevMessages,message]));
     } catch (error) {
       console.error(error);
     }
   }
+
   return (
     <div className="App">
       <Screen messages={messages}/>
-      <Form sendData={handleGetData}/>
+      <Form sendData={addMessage}/>
     </div>
   );
 }
