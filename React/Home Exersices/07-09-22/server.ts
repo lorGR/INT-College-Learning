@@ -20,6 +20,9 @@ if(mongoURI) {
     console.log("Couldn't find MONGO URI");
 }
 
+import userRoutes from "./API/users/usersRoutes";
+app.use("/users", userRoutes);
+
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}/`);
 });
