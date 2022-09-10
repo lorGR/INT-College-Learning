@@ -9,17 +9,28 @@ export async function addLegoSet(req: express.Request, res: express.Response) {
 		const legoSet = new LegoModel({ setName: legoSetName, price: legoSetPrice, imgSrc: legoSetImgUrl });
 		const legoSetDB = await legoSet.save();
 		if (!legoSetDB) throw new Error("the lego set couldn't be saved");
-		res.send({ success: true, legoSetDB });
+
+		const legoSetArrayDB = await getAllItems();
+		res.send({legoSetArrayDB});
 	} catch (error) {
 		res.send(error);
 	}
 }
 export async function getAllLegoSets(req:express.Request, res:express.Response) {
 	try {
-		const legoSetArrayDB = await LegoModel.find()
-		if(!legoSetArrayDB) throw new Error("no lego sets found on DB")
-		res.send({legoSetArrayDB})
+		const legoSetArrayDB = await getAllItems();
+		res.send({legoSetArrayDB});
 	} catch (error) {
 		res.send(error)
+	}
+}
+
+async function getAllItems() {
+	try {
+		const legoSetArrayDB = await LegoModel.find();
+		if(!legoSetArrayDB) throw new Error("no lego sets found on DB");
+		return legoSetArrayDB;
+	} catch (error) {
+		console.error(error);
 	}
 }

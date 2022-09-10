@@ -1,7 +1,8 @@
 import axios from "axios";
 
 interface AddSetProps {
-    setShowAddItemForm: CallableFunction
+    setShowAddItemForm: CallableFunction,
+    setLegoSetArray: CallableFunction
 }
 
 export const AddSet: React.FC<AddSetProps> = (props) => {
@@ -13,8 +14,9 @@ export const AddSet: React.FC<AddSetProps> = (props) => {
             const legoSetImgUrl = e.target.elements.LegoSetImgUrl.value;
 
             const { data } = await axios.post('/legos/addLegoSet', { legoSetName, legoSetPrice, legoSetImgUrl });
-            const { legoSetDB } = data;
+            const { legoSetArrayDB } = data;
             props.setShowAddItemForm(false);
+            props.setLegoSetArray(legoSetArrayDB);
         } catch (error) {
             console.error(error);
         }
