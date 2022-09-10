@@ -54,8 +54,8 @@ export const MainPage = () => {
                 <h1>Lego store</h1>
                 {user && <h2>Hello {user.username} </h2>}
                 {user?.role !== "member" && <button onClick={handleAddItemForm}>Add Item</button>}
-                {showAddItemForm && <AddSet setShowAddItemForm={setShowAddItemForm} setLegoSetArray={setLegoSetArray}/> }     
-                {legoSetArray.map((legoset) => <LegoSetCard setName={legoset.setName} price={legoset.price} imgSrc={legoset.imgSrc} />)}
+                {showAddItemForm && <AddSet setShowAddItemForm={setShowAddItemForm} setLegoSetArray={setLegoSetArray}/> }  
+                {legoSetArray.map((legoset) => <LegoSetCard setLegoSetArray={setLegoSetArray} userRole={user?.role} setName={legoset.setName} price={legoset.price} imgSrc={legoset.imgSrc} />)}
             </div>
         </div>
     );

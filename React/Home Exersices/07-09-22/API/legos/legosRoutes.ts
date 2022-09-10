@@ -1,11 +1,12 @@
 import express from "express";
-import { addLegoSet, getAllLegoSets } from "./legosCtrl";
+import { addLegoSet, deleteItem, getAllLegoSets } from "./legosCtrl";
 
 const router = express.Router();
 
 router
-.post('/addLegoSet', addLegoSet)
-.get("/getAllLegoSets", getAllLegoSets)
+    .post('/addLegoSet', addLegoSet)
+    .get("/getAllLegoSets", getAllLegoSets)
+    .delete("/deleteItem", deleteItem)
 
 
 export default router;

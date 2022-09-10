@@ -25,6 +25,24 @@ export async function getAllLegoSets(req:express.Request, res:express.Response) 
 	}
 }
 
+export async function deleteItem (req: express.Request, res: express.Response) {
+	try {
+		const { setName } = req.body;
+		if(!setName) throw new Error("Couldn't get setName from req.body");
+
+		if(await LegoModel.deleteOne({setName})){
+			const legoSetArrayDB = await getAllItems();
+			res.send({sucsess: true, legoSetArrayDB});
+		} else {
+			res.send({sucsess : false});
+			throw new Error(`Couldn't find name of ${setName}`);
+		}
+
+	} catch (error) {
+		res.send({error: error.message});
+	}
+}
+
 async function getAllItems() {
 	try {
 		const legoSetArrayDB = await LegoModel.find();
