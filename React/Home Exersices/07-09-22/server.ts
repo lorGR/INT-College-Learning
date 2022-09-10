@@ -23,6 +23,9 @@ if(mongoURI) {
 import userRoutes from "./API/users/usersRoutes";
 app.use("/users", userRoutes);
 
+import legosRoutes from "./API/legos/legosRoutes";
+app.use("/legos", legosRoutes)
+
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}/`);
 });
