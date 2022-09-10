@@ -14,3 +14,12 @@ export async function addLegoSet(req: express.Request, res: express.Response) {
 		res.send(error);
 	}
 }
+export async function getAllLegoSets(req:express.Request, res:express.Response) {
+	try {
+		const legoSetArrayDB = await LegoModel.find()
+		if(!legoSetArrayDB) throw new Error("no lego sets found on DB")
+		res.send({legoSetArrayDB})
+	} catch (error) {
+		res.send(error)
+	}
+}
