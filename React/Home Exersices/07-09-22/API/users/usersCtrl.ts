@@ -25,7 +25,6 @@ export async function loginUser(req: express.Request, res: express.Response) {
         if (!userDB) throw new Error("Couldn't find user");
         res.send({ login: true, user: userDB });
     } catch (error) {
-        console.error(error);
         res.send({ error: error.message });
     }
 }
