@@ -1,7 +1,10 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
     async function handleLogin(e: React.FormEvent<HTMLFormElement> | any) {
         try {
             e.preventDefault();
@@ -11,6 +14,9 @@ const Login = () => {
             const { data } = await axios.post("/users/loginUser", { email, password });
             if (!data) throw new Error("Couldn't recieve data from AXIOS POST: /users/loginUser");
             console.log(data);
+            if(data) {
+                navigate("/main");
+            }
 
         } catch (error) {
             console.error(error);
