@@ -9,6 +9,11 @@ export async function registerUser(req: express.Request, res: express.Response) 
         const addUserDB = new UserModel({ username, email, password });
         if (!addUserDB) throw new Error("Couldn't add user to DB");
         await addUserDB.save();
+
+        const cookie = {autorize: "AprovedUser"};
+        const secret = process.env.JWT_SECRET;
+
+
         res.send({ registered: true });
     } catch (error) {
         console.error(error);
