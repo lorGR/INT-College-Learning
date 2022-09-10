@@ -10,7 +10,7 @@ app.use(express.static("client/build"));
 dotenv.config();
 const mongoURI = process.env.MONGO_URI;
 
-const port: number = 3000;
+const port: number = 4000;
 if(mongoURI) {
     mongoose
         .connect(mongoURI)
