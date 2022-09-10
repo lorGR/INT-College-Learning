@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 export const MainPage = () => {
-    useEffect()
+    // useEffect()
     return (
         <div>
             <div>
