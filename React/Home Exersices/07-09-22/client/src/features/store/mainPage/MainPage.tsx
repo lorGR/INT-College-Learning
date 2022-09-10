@@ -29,7 +29,6 @@ export const MainPage = () => {
                 const { legoSetArrayDB } = data;
                 setLegoSetArray(legoSetArrayDB);
             }
-            console.log("hello");
             getUser();
             getAllLegoSets()
         } catch (error) {
