@@ -3,8 +3,8 @@ import { getUser, loginUser, registerUser } from "./usersCtrl";
 const router = express.Router();
 
 router
+    .post("/getUser", getUser)
     .post("/registerUser", registerUser)
     .post("/loginUser", loginUser)
-    .post("/getUser", getUser)
 
 export default router;

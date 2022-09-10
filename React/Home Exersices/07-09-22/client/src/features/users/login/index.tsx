@@ -13,10 +13,10 @@ const Login = () => {
 
             const { data } = await axios.post("/users/loginUser", { email, password });
             if (!data) throw new Error("Couldn't recieve data from AXIOS POST: /users/loginUser");
-            const { user, error } = data;
+            const { userDB, error } = data;
             if(error) throw error;
-            if(user) {
-                navigate(`/main/${user._id}`);
+            if(userDB) {
+                navigate('/main');
             }
 
         } catch (error) {
