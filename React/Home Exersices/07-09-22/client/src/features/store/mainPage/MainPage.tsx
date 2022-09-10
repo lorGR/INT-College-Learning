@@ -34,7 +34,7 @@ export const MainPage = () => {
         } catch (error) {
             console.error(error);
         }
-    }, []);
+    }, [legoSetArray]);
 
     const handleAddItemForm = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         try {
@@ -53,7 +53,7 @@ export const MainPage = () => {
                 <h1>Lego store</h1>
                 {user && <h2>Hello {user.username} </h2>}
                 {user?.role !== "member" && <button onClick={handleAddItemForm}>Add Item</button>}
-                {showAddItemForm && <AddSet setShowAddItemForm={setShowAddItemForm}/> }                
+                {showAddItemForm && <AddSet setShowAddItemForm={setShowAddItemForm}/> }     
                 {legoSetArray.map((legoset) => <LegoSetCard setName={legoset.setName} price={legoset.price} imgSrc={legoset.imgSrc} />)}
             </div>
         </div>
