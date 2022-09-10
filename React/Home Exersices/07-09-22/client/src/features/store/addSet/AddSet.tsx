@@ -1,6 +1,10 @@
 import axios from "axios";
 
-export const AddSet = () => {
+interface AddSetProps {
+    setShowAddItemForm: CallableFunction
+}
+
+export const AddSet: React.FC<AddSetProps> = (props) => {
 	async function handleSubmitLegoSet(e:any) {
         e.preventDefault();
         try {
