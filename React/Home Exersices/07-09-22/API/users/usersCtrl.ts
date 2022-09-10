@@ -28,3 +28,14 @@ export async function loginUser(req: express.Request, res: express.Response) {
         res.send({ error: error.message });
     }
 }
+
+export async function getUser(req: express.Request, res: express.Response) {
+    try {
+        const { userId } = req.body;
+        const userDB = await UserModel.findOne({"_id": userId});
+        if(!userDB) throw new Error(`Couldn't find user with the id ${userId}`);
+        res.send({ user: userDB});
+    } catch (error) {
+        res.send({ error: error.message });
+    }
+}
