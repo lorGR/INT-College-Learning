@@ -43,6 +43,23 @@ export async function deleteItem (req: express.Request, res: express.Response) {
 	}
 }
 
+export async function editItem(req: express.Request, res: express.Response) {
+	try {
+		const { legoSetName , legoSetPrice , legoSetImgUrl, setName } = req.body;
+		if (!legoSetName || !legoSetPrice || !legoSetImgUrl || !setName) throw new Error("Couldn't get all fields from req.body");
+
+		if(await LegoModel.findOne({"setName": setName}).updateOne({"setName": legoSetName, "price": legoSetPrice, "imgSrc": legoSetImgUrl})) {
+			const legoSetArrayDB = await getAllItems();
+			res.send({sucsess: true, legoSetArrayDB});
+		} else {
+			res.send({sucsess: false});
+			throw new Error(`Couldn't find and update set with the name: ${setName}`);
+		}
+	} catch (error) {
+		res.send({error: error.message});
+	}
+}
+
 async function getAllItems() {
 	try {
 		const legoSetArrayDB = await LegoModel.find();

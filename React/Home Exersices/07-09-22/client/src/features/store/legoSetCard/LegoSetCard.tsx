@@ -1,4 +1,6 @@
 import axios from "axios";
+import { useState } from "react";
+import EditSet from "../editSet/EditSet";
 
 interface LegoSetProps {
     setName: string,
@@ -9,6 +11,7 @@ interface LegoSetProps {
 }
 
 export const LegoSetCard = ({ setName, price, imgSrc, userRole, setLegoSetArray}: LegoSetProps) => {
+    const [showEditItemForm , setShowEditItemForm ] = useState<boolean>(false);
     const handleDeleteItem = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         try {
             const { data } = await axios.delete("/legos/deleteItem", { data: { setName } });
@@ -19,11 +22,20 @@ export const LegoSetCard = ({ setName, price, imgSrc, userRole, setLegoSetArray}
             console.error(error);
         }
     }
+    const handleEditItem = () =>  {
+        try {
+            setShowEditItemForm(!showEditItemForm);
+        } catch (error) {
+            console.error(error);
+        }
+    } 
     return (
         <div>
             <div>
-                {userRole !== "member" && <button onClick={handleDeleteItem}>Delete</button>}
                 <img src={imgSrc} alt={setName} />
+                {userRole !== "member" && <button onClick={handleDeleteItem}>Delete</button>}
+                {userRole !== "member" && <button onClick={handleEditItem}>Edit</button>}
+                {showEditItemForm && <EditSet setName={setName} setLegoSetArray={setLegoSetArray} setShowEditItemForm={setShowEditItemForm}/>}
                 <h2>{setName}</h2>
                 <h3>Price: {price}$</h3>
             </div>

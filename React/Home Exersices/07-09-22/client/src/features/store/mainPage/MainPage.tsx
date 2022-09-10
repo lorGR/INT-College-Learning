@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UserModel from "../../users/userModel";
 import { AddSet } from '../addSet/AddSet';
 
@@ -39,7 +39,7 @@ export const MainPage = () => {
 
     const handleAddItemForm = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         try {
-            setShowAddItemForm(true);
+            setShowAddItemForm(!showAddItemForm);
         } catch (error) {
             console.error(error);
         }
