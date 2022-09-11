@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+import './App.scss';
 import Login from "./features/users/login";
 import Register from "./features/users/register";
 import { MainPage } from './features/store/mainPage/MainPage';

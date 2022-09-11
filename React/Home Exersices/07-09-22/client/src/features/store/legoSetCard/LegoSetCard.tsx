@@ -30,8 +30,8 @@ export const LegoSetCard = ({ setName, price, imgSrc, userRole, setLegoSetArray}
         }
     } 
     return (
-        <div>
-            <div>
+        <div className="card">
+            <div className="card__card">
                 <img src={imgSrc} alt={setName} />
                 {userRole !== "member" && <button onClick={handleDeleteItem}>Delete</button>}
                 {userRole !== "member" && <button onClick={handleEditItem}>Edit</button>}

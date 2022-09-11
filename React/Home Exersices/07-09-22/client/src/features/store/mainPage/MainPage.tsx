@@ -49,14 +49,19 @@ export const MainPage = () => {
         navigate("/");
     }
     return (
-        <div>
-            <div>
-                <h1>Lego store</h1>
-                {user && <h2>Hello {user.username} </h2>}
-                {user?.role !== "member" && <button onClick={handleAddItemForm}>Add Item</button>}
-                {showAddItemForm && <AddSet setShowAddItemForm={setShowAddItemForm} setLegoSetArray={setLegoSetArray}/> }  
-                {legoSetArray.map((legoset) => <LegoSetCard key={legoset._id} setLegoSetArray={setLegoSetArray} userRole={user?.role} setName={legoset.setName} price={legoset.price} imgSrc={legoset.imgSrc} />)}
-            </div>
+        <div className='store_session'>
+                <div className='store_session__Nav'>
+                    <div className="store_session__Nav__logoWrapper">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/500px-LEGO_logo.svg.png" alt="lego logo"/>
+                        <h1>Lego store</h1>
+                    </div>
+                    {user && <h2>Hello {user.username} </h2>}
+                    {user?.role !== "member" && <button onClick={handleAddItemForm}>Add Item</button>}
+                    {showAddItemForm && <AddSet setShowAddItemForm={setShowAddItemForm} setLegoSetArray={setLegoSetArray}/> }  
+                </div>
+                <div className="store_session__legoSetContainer">
+                     {legoSetArray.map((legoset) => <LegoSetCard key={legoset._id} setLegoSetArray={setLegoSetArray} userRole={user?.role} setName={legoset.setName} price={legoset.price} imgSrc={legoset.imgSrc} />)}
+                </div>
         </div>
     );
 };

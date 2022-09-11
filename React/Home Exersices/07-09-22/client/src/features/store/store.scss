@@ -1,0 +1,44 @@
+.store_session {
+    width: 100vw;
+    &__Nav {
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(255, 193, 7);
+
+        h1,
+        h2 {
+            margin: 0;
+        }
+
+        &__logoWrapper {
+            width: 25%;
+            height: 150px;
+            display: flex;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                height: 80%;
+                width: fit-content;
+
+            }
+        }
+    }
+
+    &__legoSetContainer {
+        margin: auto;
+        width: 90vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+
+        img {
+            height: 350px;
+            width: auto;
+        }
+    }
+}
