@@ -30,7 +30,7 @@ export const AddSet: React.FC<AddSetProps> = (props) => {
         }
     }
     return (
-        <div>
+        <div className="addSetForm">
             <h1>Add Set</h1>
             <form onSubmit={handleSubmitLegoSet} >
                 <input type="text" name="LegoSetName" placeholder="Enter Set Name Here" />

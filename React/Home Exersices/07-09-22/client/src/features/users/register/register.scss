@@ -1,5 +1,5 @@
 .session {
-    background-color: rgb(255, 238, 0);
+    background-color: rgb(255, 193, 7);
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -62,9 +62,11 @@
                 height: 4rem;
                 width: 30%;
                 font-size: 1.75rem;
-                font-weight: bolder;
+                font-weight:900;
                 color: white;
                 -webkit-text-stroke: 2px black;
+
+
 
                 &:hover {
                     color: rgb(255, 238, 0);

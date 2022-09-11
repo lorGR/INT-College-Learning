@@ -1,5 +1,5 @@
 .store_session {
-    width: 100vw;
+
     &__Nav {
         height: 150px;
         display: flex;
@@ -8,9 +8,9 @@
         background-color: rgb(255, 193, 7);
         margin-bottom: 20px;
 
-        h1,
         h2 {
             margin: 0;
+            padding-right:20px;
         }
 
         &__logoWrapper {
