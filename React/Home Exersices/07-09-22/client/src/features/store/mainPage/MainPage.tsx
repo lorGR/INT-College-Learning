@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserModel from "../../users/userModel";
 import { AddSet } from '../addSet/AddSet';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faPlus} from "@fortawesome/free-solid-svg-icons" 
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
 import { LegoSetCard } from '../legoSetCard/LegoSetCard';
 export interface LegoSet {
