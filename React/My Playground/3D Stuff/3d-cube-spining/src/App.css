@@ -37,6 +37,10 @@
   position: absolute;
 }
 
+img {
+  width: 100%;
+}
+
 .front {
   background-color: red;
   transform: rotateY(0deg) translateZ(300px);
