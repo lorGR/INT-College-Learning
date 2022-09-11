@@ -8,7 +8,8 @@ import { LegoSetCard } from '../legoSetCard/LegoSetCard';
 export interface LegoSet {
     setName: string,
     price: string,
-    imgSrc: string
+    imgSrc: string,
+    _id: string
 }
 
 export const MainPage = () => {
@@ -54,7 +55,7 @@ export const MainPage = () => {
                 {user && <h2>Hello {user.username} </h2>}
                 {user?.role !== "member" && <button onClick={handleAddItemForm}>Add Item</button>}
                 {showAddItemForm && <AddSet setShowAddItemForm={setShowAddItemForm} setLegoSetArray={setLegoSetArray}/> }  
-                {legoSetArray.map((legoset) => <LegoSetCard setLegoSetArray={setLegoSetArray} userRole={user?.role} setName={legoset.setName} price={legoset.price} imgSrc={legoset.imgSrc} />)}
+                {legoSetArray.map((legoset) => <LegoSetCard key={legoset._id} setLegoSetArray={setLegoSetArray} userRole={user?.role} setName={legoset.setName} price={legoset.price} imgSrc={legoset.imgSrc} />)}
             </div>
         </div>
     );
