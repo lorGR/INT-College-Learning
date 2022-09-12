@@ -1,5 +1,8 @@
 import axios from "axios";
 
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faX} from "@fortawesome/free-solid-svg-icons";
+
 interface AddSetProps {
     setShowAddItemForm: CallableFunction,
     setLegoSetArray: CallableFunction
@@ -38,7 +41,9 @@ export const AddSet: React.FC<AddSetProps> = (props) => {
                 <input type="text" name="LegoSetImgUrl" placeholder="Enter Set img Url Here" />
                 <button type="submit">Submit Set</button>
             </form>
-            <button onClick={handleCloseForm}>Cancel</button>
+            <button className="closeAddSetForm" onClick={handleCloseForm}>
+                <FontAwesomeIcon icon={faX} size="2x"/>
+            </button>
         </div>
     );
 };
