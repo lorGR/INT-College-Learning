@@ -27,6 +27,15 @@
 
             }
         }
+        .addSetButton {
+            transition: all .35s ease-in-out;
+            color: white;
+            z-index: 1;
+            &:hover {
+                background-color: rgb(161, 5, 5);
+                color: rgb(255, 193, 7);
+            }
+        }
     }
 
     &__legoSetContainer {
