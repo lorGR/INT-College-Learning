@@ -34,7 +34,7 @@ const Login = () => {
 						<input type="password" name="password" id="password" placeholder="Enter Your Password" />
 					</div>
 					<button type="submit" value="Login">
-						Sign In
+						SIGN IN
 					</button>
 				</form>
 				<p className="form_link">
