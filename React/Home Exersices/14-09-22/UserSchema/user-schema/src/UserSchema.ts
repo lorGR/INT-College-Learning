@@ -1,5 +1,19 @@
 import mongoose from "mongoose";
 
+enum Role {
+    MENTEE = "mentee",
+    MENTOR = "mentor",
+    ADMIN = "admin"
+}
+
+enum Domain {
+    FULLSTACK_DEVELOPER = "fullstack_developer",
+    BACKEND_DEVELOPER = "backend_developer",
+    FRONTEND_DEVELOPER = "frontend_developer",
+    UX_DESIGNER = "ux_designer",
+
+}
+
 const UserSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -19,8 +33,9 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     role: {
-        type: String,
-        enum: ["mentee", "mentor", "admin"],
+        type: Array<String>,
+        enum: Role,
+        default: Role.MENTEE,
         required: true
     },
     location: {
@@ -35,8 +50,13 @@ const UserSchema = new mongoose.Schema({
         instagramURL: String,
         gitHubURL: String
     },
-    phoneNumber: Number,
+    domain: {
+        enum: Domain,
+        default: Domain.FULLSTACK_DEVELOPER
+    },
+    phoneNumber: String,
     about: String,
+    imgSRC: String,
 });
 
 const UserModel = mongoose.model("user", UserSchema);
