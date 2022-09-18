@@ -11,7 +11,6 @@ enum Domain {
     BACKEND_DEVELOPER = "backend_developer",
     FRONTEND_DEVELOPER = "frontend_developer",
     UX_DESIGNER = "ux_designer",
-
 }
 
 const UserSchema = new mongoose.Schema({
@@ -51,6 +50,7 @@ const UserSchema = new mongoose.Schema({
         gitHubURL: String
     },
     domain: {
+        type: Array<String>,
         enum: Domain,
         default: Domain.FULLSTACK_DEVELOPER
     },
