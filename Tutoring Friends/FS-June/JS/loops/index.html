@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        /* margin: 0; */
+    }
+    #imageContainer {
+        height: 250px;
+        border: 1px solid black;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
 <body>
-    <script src="./script.js"></script>
+    <div id="imageContainer">
+
+    </div>
+    <form id="form" onsubmit="handleAdd(event)">
+        <input type="text" name="userImage" id="userImage" placeholder="Enter image url" />
+        <button type="submit">ADD</button>
+    </form>
+    <script src="dist/ts.js"></script>
 </body>
+
 </html>
