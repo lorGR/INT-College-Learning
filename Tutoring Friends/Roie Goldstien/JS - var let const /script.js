@@ -1,10 +1,10 @@
-var age = 22;
+// var age = 22;
 
-console.log(age);
+// console.log(age);
 
-var age = 44;
+// var age = 44;
 
-console.log(age);
+// console.log(age);
 
 // let age = 23;
 
@@ -21,8 +21,8 @@ console.log(age);
 // printAge();
 
 
-let firstName = "lior"
-let lastName = "grishin"
+// let firstName = "lior"
+// let lastName = "grishin"
 
 
 
