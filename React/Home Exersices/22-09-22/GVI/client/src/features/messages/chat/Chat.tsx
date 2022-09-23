@@ -1,10 +1,9 @@
-import React from 'react';
-import { useEffect } from 'react';
 import ChatHeader from './chatHeader/ChatHeader';
+import CurrentChatWithUser from './currentChatWithUser/CurrentChatWithUser';
 
-interface ChatProps {
-	userLoggedIn: string;
-}
+// interface ChatProps {
+// 	userLoggedIn: string;
+// }
 
 export interface User {
     _id: string,
@@ -38,11 +37,9 @@ function Chat() {
 
 
 	return (
-		<div>
+		<div className='chat'>
 			<ChatHeader loggedInUser={loggedInUser} />
-			{/* <CurrentChatWithUser /> */}
-				{/* <CurrentChatUser  userId /> */}
-				{/* <MessageContainer  userId userLoggedIn  /> */}
+			<CurrentChatWithUser loggedInUser={loggedInUser} reciverUser={user} />
 				{/* <SendMessage userId userLoggedIn state /> */}
 			{/* <OtherUserChat /> */}
 				{/* <SearchMyUsers /> */}
