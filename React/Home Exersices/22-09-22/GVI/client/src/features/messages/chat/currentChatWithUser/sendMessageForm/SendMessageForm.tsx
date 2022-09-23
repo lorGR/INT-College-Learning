@@ -1,5 +1,5 @@
 import axios from "axios"
-import React from "react"
+import React, { useRef } from "react"
 import { User } from "../../Chat"
 import { Message } from "../CurrentChatWithUser"
 
@@ -37,4 +37,4 @@ const SendMessageForm: React.FC<SendMessageFormProps> = ({ loggedInUser, reciver
     )
 }
 
-export default SendMessageForm
+export default SendMessageForm;

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { User } from './../Chat';
 import CurrentChatWithUserHeader from './currentChatWithUserHeader/CurrentChatWithUserHeader';
 import MessageContainer from './messageContainer/MessageContainer';
@@ -21,11 +22,27 @@ export interface Message {
 const CurrentChatWithUser: React.FC<CurrentChatWithUserProps> = ({ loggedInUser, reciverUser }) => {
 
   const [messages, setMessages] = useState<Message[]>([]);
+  const [senderId, reciverId] = [loggedInUser._id, reciverUser._id];
+  useEffect( () => {
+    try {
+      const getMessages = async () => {
+        const { data } = await axios.post(
+            "/api/messages/getRecentMessagesByUserId",
+            { senderId, reciverId });  
+        if (!data) throw new Error("Couldn't recieve data from AXIOS POST: /api/messages/get/getRecentMessagesByUserId ")
+        const { messagesDB } = data;
+        setMessages(messagesDB);
+    }
+    getMessages();
+    } catch (error) {
+      console.error(error);
+    }
+  },[]);
 
   return (
     <div className='current-chat-with-user'>
       <CurrentChatWithUserHeader user={reciverUser} />
-      <MessageContainer loggedInUser={loggedInUser} reciverUser={reciverUser} setMessages={setMessages} messages={messages} />
+      <MessageContainer messages={messages} />
       <SendMessageForm loggedInUser={loggedInUser} reciverUser={reciverUser} setMessages={setMessages} messages={messages}/>
     </div>
   )
