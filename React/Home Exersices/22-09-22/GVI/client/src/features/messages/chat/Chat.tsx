@@ -10,12 +10,14 @@ function Chat() {
 
 	return (
 		<div>
-			
-				{/* chatHeader */}
+			{/* <ChatHeader /> */}
+			{/* <CurrentChatWithUser /> */}
 				{/* <CurrentChatUser  userId /> */}
-				{/* <MessageContainer  userId userLoggedIn  />/> */}
-				{/* <SendMessage userId userLoggedIn state />  />/> */}
-			
+				{/* <MessageContainer  userId userLoggedIn  /> */}
+				{/* <SendMessage userId userLoggedIn state /> */}
+			{/* <OtherUserChat /> */}
+				{/* <SearchMyUsers /> */}
+				{/* <MyMentees /> */} {/* OR */} {/* <MyMentors /> */}
 		</div>
 	);
 }
