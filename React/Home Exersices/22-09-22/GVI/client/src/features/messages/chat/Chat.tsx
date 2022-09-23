@@ -7,6 +7,7 @@ interface ChatProps {
 }
 
 export interface User {
+    _id: string,
 	email: string,
 	firstName: string,
 	lastName: string,
@@ -18,6 +19,7 @@ function Chat() {
 	// TODO: in useEffect, get the logged in user, when the function will be written
 
 	const loggedInUser:User = {
+        _id:"632b3c3c9eed0065fc835c33",
 		email: "gili@gmail.com",
 		firstName: "Gili",
 		lastName: "Menahem",
@@ -26,6 +28,7 @@ function Chat() {
 	}
 
 	const user:User = {
+        _id: "632b3bb59eed0065fc835c30",
 		email: "lior@gmail.com",
 		firstName: "Lior",
 		lastName: "Grishin",
