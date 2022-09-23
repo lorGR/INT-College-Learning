@@ -1,25 +1,18 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { User } from "../../Chat"
+import { Message } from "../CurrentChatWithUser"
 import MessageCard from "./messageCard/MessageCard"
 
 interface MessageContainerProps {
     loggedInUser: User,
-    reciverUser: User
+    reciverUser: User,
+    setMessages: CallableFunction,
+    messages: Array<Message>
 }
 
-export interface Message {
-    _id: string
-    from: User,
-    to: User,
-    time: string,
-    text: string,
-    read: boolean
-}
+const MessageContainer: React.FC<MessageContainerProps> = ({ loggedInUser, reciverUser, messages, setMessages}) => {
 
-const MessageContainer: React.FC<MessageContainerProps> = ({ loggedInUser, reciverUser }) => {
-
-    const [messages, setMessages] = useState<Message[]>([])
     const [senderId, reciverId] = [loggedInUser._id, reciverUser._id];
     useEffect(() => {
         try {
@@ -29,17 +22,16 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ loggedInUser, reciv
                     { senderId, reciverId });
                 if (!data) throw new Error("Couldn't recieve data from AXIOS POST: /api/messages/get/getRecentMessagesByUserId ")
                 const { messagesDB } = data;
-                console.log(messagesDB);
-                setMessages(messagesDB);
+                setMessages(messagesDB)
             }
             getMessages();
         } catch (error) {
             console.error(error);
         }
     }, []);
-    // TODO : Display Messages
     return (
         <div className="message-container">
+            
             {messages.map(message =>
                 <MessageCard
                     key={message._id}

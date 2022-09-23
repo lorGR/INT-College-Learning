@@ -1,5 +1,5 @@
 import { User } from "../../../Chat"
-import { Message } from "../MessageContainer"
+import { Message } from "../../CurrentChatWithUser";
 
 interface MessageCardProps {
     user: User,
