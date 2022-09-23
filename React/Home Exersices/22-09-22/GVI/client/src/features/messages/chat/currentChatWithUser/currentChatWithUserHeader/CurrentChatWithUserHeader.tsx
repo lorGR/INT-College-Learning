@@ -9,7 +9,7 @@ const CurrentChatWithUserHeader:React.FC<CurrentChatWithUserHeaderProps> = ({use
   return (
     <div className='current-chat-with-user-header'>
         <div className='current-chat-with-user-header__img'></div>
-        <div>
+        <div className='current-chat-with-user-header__user'>
             <h3>{user.firstName} {user.lastName}</h3>
         </div>
     </div>
