@@ -1,18 +1,18 @@
 import express from "express";
-import {UserModel}  from "../users/userModel";
+import { UserModel } from "../users/userModel";
 import { MessageModel } from "./messagesModel";
 
 export async function sendMessage(req: express.Request, res: express.Response) {
     try {
         // asume from client side we receive id of sender and receiver
-        const { fromId, toId, text, type } = req.body;
-        if (!fromId || !toId || !text || !type) throw new Error("Sender/Reciver/Message/Type wasn't recieved from req.body");
+        const { senderId, receiverId, text, type } = req.body;
+        if (!senderId || !receiverId || !text || !type) throw new Error("Sender/Reciver/Message/Type wasn't recieved from req.body");
 
         const time: string = getCurrentTime(new Date().getHours(), new Date().getMinutes());
 
         const [senderUser, receiverUser] = await Promise.all([
-            UserModel.findOne({ "userId": fromId }),
-            UserModel.findOne({ "userId": toId })
+           await UserModel.findById(senderId),
+           await UserModel.findById(receiverId)
         ]);
         if (!senderUser || !receiverUser) throw new Error("Sender and Receiver must exist on DB");
 
@@ -25,7 +25,7 @@ export async function sendMessage(req: express.Request, res: express.Response) {
             time
         });
         await messageDB.save();
-
+        
         res.send({ messageSent: true, messageDB });
     } catch (error) {
         res.send({ error: error.message });
@@ -58,18 +58,24 @@ export async function getRecentMessagesByUserId(req: express.Request, res: expre
         const { senderId, reciverId } = req.body;
         if (!senderId || !reciverId) throw new Error("Sender/Reciever wasn't recieved from req.body");
 
-        const messagesDB = await MessageModel.find(
+        const [senderUser, receiverUser] = await Promise.all([
+            await UserModel.findById(senderId),
+            await UserModel.findById(reciverId)
+        ]);
+        if(!senderUser || !receiverUser) throw new Error("Coulnd't find users with the specific id");
+
+        const messages = await MessageModel.find(
             {
                 $or: [
-                    { "from.userId": senderId, "to.userId": reciverId },
-                    { from: reciverId, to: senderId }]
+                    { "from._id": senderId, "to._id": reciverId },
+                    { "from._id": reciverId, "to._id": senderId }]
             })
-            .limit(3) // should be 20 in future
+            .limit(20)
             .sort({ _id: -1 });
 
-        const messages = messagesDB.reverse();
+        const messagesDB = messages.reverse();
 
-        res.send({ messages });
+        res.send({ messagesDB });
     } catch (error) {
         res.send({ error: error.message });
     }
