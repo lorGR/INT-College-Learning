@@ -1,0 +1,24 @@
+.message-card {
+    &__sender{
+    display: flex;
+    justify-content: flex-start;
+        &__msg {
+            color: #FFFFFF;
+            background-color: #989AD7;
+        }
+    }
+    &__reciever{
+        display: flex;
+        justify-content: flex-end;
+        &__msg{
+
+            background-color: #F1F1FC;
+        }
+    }
+    .card {
+        max-width: 25rem;
+        word-wrap: break-word;
+        padding: 1rem;
+        border-radius: .5rem;
+    }
+}

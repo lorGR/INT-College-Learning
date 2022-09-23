@@ -1,0 +1,24 @@
+.send-message-form {
+    display: flex;
+    align-items: center;
+    form {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        gap: 1rem;
+        input[type=text] {
+            width: 95%;
+            outline: none;
+            border: none;
+            color: white;
+            background-color: #989AD7;
+            border-radius: 1.5rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0 1rem ;
+            &::placeholder {
+                color: #FFFFFF;
+            }
+        }
+    }
+}

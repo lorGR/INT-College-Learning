@@ -1,4 +1,3 @@
-import React from 'react'
 import { User } from './../../Chat';
 
 interface CurrentChatWithUserHeaderProps {
@@ -7,9 +6,9 @@ interface CurrentChatWithUserHeaderProps {
 
 const CurrentChatWithUserHeader:React.FC<CurrentChatWithUserHeaderProps> = ({user}) => {
   return (
-    <div className='current-chat-with-user-header'>
-        <div className='current-chat-with-user-header__img'></div>
-        <div className='current-chat-with-user-header__user'>
+    <div className='current-chat-with-user__header'>
+        <div className='current-chat-with-user__header__img'></div>
+        <div className='current-chat-with-user__header__user'>
             <h3>{user.firstName} {user.lastName}</h3>
         </div>
     </div>

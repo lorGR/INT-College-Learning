@@ -42,7 +42,7 @@ const CurrentChatWithUser: React.FC<CurrentChatWithUserProps> = ({ loggedInUser,
   return (
     <div className='current-chat-with-user'>
       <CurrentChatWithUserHeader user={reciverUser} />
-      <MessageContainer messages={messages} />
+      <MessageContainer messages={messages} loggedInUser={loggedInUser} reciverUser={reciverUser}/>
       <SendMessageForm loggedInUser={loggedInUser} reciverUser={reciverUser} setMessages={setMessages} messages={messages}/>
     </div>
   )

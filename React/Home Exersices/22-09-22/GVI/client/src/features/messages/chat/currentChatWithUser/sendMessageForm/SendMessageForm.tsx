@@ -1,5 +1,4 @@
 import axios from "axios"
-import React, { useRef } from "react"
 import { User } from "../../Chat"
 import { Message } from "../CurrentChatWithUser"
 
@@ -31,7 +30,7 @@ const SendMessageForm: React.FC<SendMessageFormProps> = ({ loggedInUser, reciver
         <div className="send-message-form">
             <form onSubmit={handleSendMessage}>
                 <input type="text" name="message" id="userMessage" placeholder="Type a message" />
-                <button type="submit">^</button>
+                <button type="submit"></button>
             </form>
         </div>
     )
