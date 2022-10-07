@@ -8,6 +8,9 @@ const app = express();
 const port = process.env.PORT;
 const mongodbURI = process.env.MONGODB_URI;
 
+app.use(express.static("../public/build"));
+app.use(express.json());
+
 if (mongodbURI) {
     mongoose
         .connect(mongodbURI)
@@ -16,6 +19,9 @@ if (mongodbURI) {
 } else {
     console.log("Couldn't find mongodbURI");
 }
+
+import UserRoutes from "./features/users/UserRoutes";
+app.use("/users", UserRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}`);
