@@ -9,6 +9,7 @@ export function handleMatchPassword () : void {
             confirmPassword.style.borderColor = "red";
             registerButton.disabled = true;
         } else {
+            password.style.borderColor = "green";
             confirmPassword.style.borderColor = "green";
             registerButton.disabled = false;
         }
@@ -16,3 +17,4 @@ export function handleMatchPassword () : void {
         console.error(error);
     }
 }
+
