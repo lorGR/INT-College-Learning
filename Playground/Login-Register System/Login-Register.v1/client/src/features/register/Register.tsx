@@ -1,5 +1,5 @@
 import axios from "axios";
-import { handleAvailableEmail, handleMatchPassword } from "./helper";
+import { handleAvailableEmail, handleMatchPassword, handlePasswordSecurity } from "./helper";
 
 const Register = () => {
 
@@ -21,7 +21,7 @@ const Register = () => {
     return (
         <form onSubmit={handleRegister}>
             <input onBlur={handleAvailableEmail} type="email" name="email" id="email" placeholder="Enter email" />
-            <input type="password" name="password" id="password" />
+            <input onBlur={handlePasswordSecurity} type="password" name="password" id="password" />
             <input onBlur={handleMatchPassword} type="password" name="confirmPassword" id="confirmPassword" />
             <input type="submit" value="Register" id="register" />
         </form>
