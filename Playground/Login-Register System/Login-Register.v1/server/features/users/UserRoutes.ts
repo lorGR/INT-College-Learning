@@ -1,8 +1,8 @@
 import express from "express";
-import { registerStep1 } from "./UserCtrl";
+import { availableEmail } from "./UserCtrl";
 const router = express.Router();
 
 router
-    .post("/register-step-1", registerStep1)
+    .post("/available-email", availableEmail)
 
 export default router;
