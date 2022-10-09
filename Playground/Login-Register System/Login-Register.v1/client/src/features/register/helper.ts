@@ -21,7 +21,7 @@ export function handleMatchPassword(): void {
     }
 }
 
-export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputElement>) {
+export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputElement>): Promise<void> {
     try {
 
         const registerButton = document.getElementById("register") as HTMLInputElement;
@@ -30,7 +30,13 @@ export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputEle
         const { data } = await axios.post("/users/available-email", { email });
         if(!data) throw new Error("Couldn't receive data from AXIOS POST: /users/available-email");
         const { available } = data;
-        available ? event.target.style.borderColor = "green" : event.target.style.borderColor = "red";
+        if (available) {
+            event.target.style.borderColor = "green";
+            registerButton.disabled = false;
+        } else {
+            event.target.style.borderColor = "red";
+            registerButton.disabled = true;
+        }
     } catch (error) {
         console.error(error);
     }
