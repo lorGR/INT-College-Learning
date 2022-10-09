@@ -1,21 +1,15 @@
 import express from "express";
-import { UserValidation } from "./UserModel";
-import { emailExist } from "./UsersHelper";
+import UserModel from "./UserModel";
 
-export async function registerStep1(req: express.Request, res: express.Response) {
+
+
+export async function availableEmail(req: express.Request, res:express.Response) {
     try {
-        const { email, password, confirmPassword } = req.body;
-        if (!email || !password || !confirmPassword) throw new Error("Missing fields: Email or Password or ConfirmPassword");
+        const { email } = req.body;
+        if(!email) throw new Error("Couldn't receive email from req.body");
 
-        const emailIsExist = await emailExist(email);
-        if (emailIsExist) {
-            res.send({ register: false, error: "email already in use" });
-        }
-
-        const { error } = UserValidation.validate({ email, password, confirmPassword });
-        if (error) throw error;
-
-        res.send({ register: true });
+        const emailIsAvailable = await UserModel.find({email});
+        emailIsAvailable.length > 0 ? res.send({available: false}) : res.send({available: true});
     } catch (error) {
         res.send({ error: error.message });
     }
