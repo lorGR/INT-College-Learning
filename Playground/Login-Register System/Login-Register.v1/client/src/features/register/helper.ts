@@ -18,6 +18,21 @@ export const PasswordSecurity = Joi.object({
         .required(),
 });
 
+export function handlePasswordSecurity(event: React.ChangeEvent<HTMLInputElement>): void {
+    try {
+
+        const registerButton = document.getElementById("register") as HTMLInputElement;
+
+        const password = event.target.value;
+        const { error } = PasswordSecurity.validate({ password });
+        if (error) throw error;
+        event.target.style.borderColor = "green";
+    } catch (error) {
+        console.error(error);
+        event.target.style.borderColor = "red";
+    }
+}
+
 export function handleMatchPassword(): void {
     try {
         const password = document.getElementById("password") as HTMLInputElement;
@@ -54,16 +69,6 @@ export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputEle
             event.target.style.borderColor = "red";
             registerButton.disabled = true;
         }
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-export function handlePasswordSecurity(event: React.ChangeEvent<HTMLInputElement>) {
-    try {
-        const password = event.target.value;
-        const { error } = PasswordSecurity.validate({ password });
-        if (error) throw error;
     } catch (error) {
         console.error(error);
     }
