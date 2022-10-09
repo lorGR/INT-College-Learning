@@ -1,8 +1,6 @@
 import express from "express";
 import UserModel from "./UserModel";
 
-
-
 export async function availableEmail(req: express.Request, res:express.Response) {
     try {
         const { email } = req.body;
