@@ -38,6 +38,20 @@ export const UserValidation = Joi.object({
     confirmPassword: Joi.ref("password")
 });
 
+export const PasswordValidation = Joi.object({
+    password: joiPassword
+        .string()
+        .min(6)
+        .max(16)
+        .minOfLowercase(1)
+        .minOfUppercase(1)
+        .minOfNumeric(1)
+        .minOfSpecialCharacters(1)
+        .noWhiteSpaces()
+        .required(),
+    confirmPassword: Joi.ref("password")
+});
+
 const UserModel = mongoose.model("users", UserSchema);
 
 export default UserModel;
