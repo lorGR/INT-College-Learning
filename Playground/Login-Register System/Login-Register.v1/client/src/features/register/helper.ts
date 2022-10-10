@@ -18,6 +18,13 @@ export const PasswordSecurity = Joi.object({
         .required(),
 });
 
+export const EmailSecurity = Joi.object({
+    email: Joi
+        .string()
+        .required()
+        .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
+})
+
 export function handlePasswordSecurity(event: React.ChangeEvent<HTMLInputElement>): void {
     try {
 
@@ -59,6 +66,10 @@ export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputEle
         const registerButton = document.getElementById("register") as HTMLInputElement;
 
         const email = event.target.value;
+
+        const { error } = EmailSecurity.validate({ email });
+        if(error) throw error;
+
         const { data } = await axios.post("/users/available-email", { email });
         if (!data) throw new Error("Couldn't receive data from AXIOS POST: /users/available-email");
         const { available } = data;
