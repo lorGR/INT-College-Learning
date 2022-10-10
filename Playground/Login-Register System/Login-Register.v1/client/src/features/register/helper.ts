@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import Joi from "joi";
+import Joi, { Err } from "joi";
 import { joiPasswordExtendCore } from "joi-password";
 
 const joiPassword = Joi.extend(joiPasswordExtendCore);
@@ -23,9 +23,9 @@ export const EmailSecurity = Joi.object({
         .string()
         .required()
         .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
-})
+});
 
-export function handlePasswordSecurity(event: React.ChangeEvent<HTMLInputElement>): void {
+export function handlePasswordSecurity(event: React.ChangeEvent<HTMLInputElement>): string | boolean {
     try {
 
         const registerButton = document.getElementById("register") as HTMLInputElement;
@@ -34,13 +34,15 @@ export function handlePasswordSecurity(event: React.ChangeEvent<HTMLInputElement
         const { error } = PasswordSecurity.validate({ password });
         if (error) throw error;
         event.target.style.borderColor = "green";
+        return true;
     } catch (error) {
         console.error(error);
         event.target.style.borderColor = "red";
+        return (error as Error).message;
     }
 }
 
-export function handleMatchPassword(): void {
+export function handleMatchPassword(): string | boolean {
     try {
         const password = document.getElementById("password") as HTMLInputElement;
         const confirmPassword = document.getElementById("confirmPassword") as HTMLInputElement;
@@ -50,17 +52,20 @@ export function handleMatchPassword(): void {
             password.style.borderColor = "red";
             confirmPassword.style.borderColor = "red";
             registerButton.disabled = true;
+            return true;
         } else {
             password.style.borderColor = "green";
             confirmPassword.style.borderColor = "green";
             registerButton.disabled = false;
+            return false;
         }
     } catch (error) {
         console.error(error);
+        return (error as Error).message;
     }
 }
 
-export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputElement>): Promise<void> {
+export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputElement>): Promise<any> {
     try {
 
         const registerButton = document.getElementById("register") as HTMLInputElement;
@@ -76,11 +81,16 @@ export async function handleAvailableEmail(event: React.ChangeEvent<HTMLInputEle
         if (available) {
             event.target.style.borderColor = "green";
             registerButton.disabled = false;
+            return true;
         } else {
             event.target.style.borderColor = "red";
             registerButton.disabled = true;
+            throw new Error("Email already in use");
         }
     } catch (error) {
         console.error(error);
+        return (error as Error).message;
     }
 }
+
+
