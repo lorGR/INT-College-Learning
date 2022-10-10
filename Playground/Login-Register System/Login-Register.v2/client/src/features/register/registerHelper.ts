@@ -36,7 +36,6 @@ export function handleEmailSecurity(event: React.ChangeEvent<HTMLInputElement>) 
         if (error) throw error;
 
         validEmail = true;
-
     } catch (error) {
         console.error(error);
         validEmail = false;
@@ -51,7 +50,6 @@ export function handlePasswordSecurity(event: React.ChangeEvent<HTMLInputElement
         if (error) throw error;
 
         validPassword = true;
-
     } catch (error) {
         console.error(error);
         validPassword = false;
@@ -68,7 +66,6 @@ export function handlePasswordMatch(event: React.ChangeEvent<HTMLInputElement>) 
         }
 
         validConfirmPassword = true;
-
     } catch (error) {
         console.error(error);
         validConfirmPassword = false;
