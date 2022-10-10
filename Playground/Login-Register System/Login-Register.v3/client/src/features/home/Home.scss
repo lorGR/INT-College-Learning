@@ -1,0 +1,23 @@
+.home {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        h1, h2 {
+            margin: 0;
+        }
+    }
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
