@@ -1,11 +1,11 @@
 
-import axios from "axios";
 import { useState } from "react";
+import { UserModel } from "../models/userModel";
 import { handleEmailSecurity, handlePasswordSecurity, handlePasswordMatch, checkValidation, register } from "./registerHelper";
 
 const Register = () => {
 
-    // const [user, setUser] = useState()
+    // const [registerdUser, setRegisteredUser] = useState<UserModel | null>(null);
 
     const handleRegister = async (event: React.FormEvent<HTMLFormElement> | any) => {
         try {
@@ -15,7 +15,8 @@ const Register = () => {
                 const email = event.target.elements.email.value;
                 const password = event.target.elements.password.value;
                 const user = await register(email,password);
-                console.log(user);
+                // setRegisteredUser(user);
+                // console.log(registerdUser);
             }
         } catch (error) {
             console.error(error);
