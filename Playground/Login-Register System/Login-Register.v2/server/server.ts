@@ -20,8 +20,8 @@ if (mongodbURI) {
     console.log("Couldn't find mongodbURI");
 }
 
-import UserRoutes from "./features/users/UserRoutes";
-app.use("/users", UserRoutes);
+import userRoutes from "./API/users/UserRoutes";
+app.use("/users", userRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}`);
