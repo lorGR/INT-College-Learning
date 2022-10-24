@@ -47,6 +47,7 @@ export const LegoSetCard = ({ setName, price, imgSrc, userRole, setLegoSetArray 
                     setName={setName}
                     setLegoSetArray={setLegoSetArray}
                     setShowEditItemForm={setShowEditItemForm}
+                    
                 />
             )}
             <h2>{setName}</h2>

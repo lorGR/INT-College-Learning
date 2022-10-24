@@ -28,7 +28,7 @@ const EditSet: React.FC<EditSetProps> = ({ setName, setLegoSetArray, setShowEdit
         <div>
             <h1>Edit Set:</h1>
             <form onSubmit={handleEditItem}>
-                <input type="text" name="LegoSetName" placeholder="Enter Set Name Here" />
+                <input type="text" name="LegoSetName" placeholder="Enter Set Name Here" value={setName} />
                 <input type="number" name="LegoSetPrice" placeholder="Enter Set price Here" />
                 <input type="text" name="LegoSetImgUrl" placeholder="Enter Set img Url Here" />
                 <button type="submit">Submit Set</button>
