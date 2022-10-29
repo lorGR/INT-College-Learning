@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  .post-container {
+    display: flex;
+    justify-content: center;
+    .post-card {
+  
+      img {
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+  .display {
+    .display-card {
+      img {
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+}
+
