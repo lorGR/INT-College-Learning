@@ -13,7 +13,7 @@ const Counter = () => {
   const handleDecrement = () => {
     dispatch(decrement());
   }
-
+  
   return (
     <div>
         {counter}
