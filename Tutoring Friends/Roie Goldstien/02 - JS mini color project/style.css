@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#previewBox {
+    width: 250px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+#colorContainer {
+    width: 100vw;
+    display: flex;
+    gap: 1rem;
+}
