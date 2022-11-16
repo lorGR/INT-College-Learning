@@ -25,6 +25,9 @@ connection.connect((err) => {
 import productsRoute from "./API/products/productsRoute";
 app.use("/products", productsRoute);
 
+import testingRoute from "./API/test/testRoute";
+app.use("/testing", testingRoute);
+
 app.listen(port, () => {
-    console.info(`Server is up and runnig http://localhost:${port}`);
+    console.info(`Server is up and running at http://localhost:${port}`);
 });

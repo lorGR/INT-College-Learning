@@ -1,56 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import axios from "axios";
+import { useState } from "react";
+import { Interface } from "readline";
+
+
 import './App.css';
 
+import { Person } from "./personModel";
+
 function App() {
+  const [person, setPerson] = useState<Person>();
+  const handleGetPerson1 = async () => {
+    try {
+      const { data } = await axios.get("/testing/get-person-1");
+      if (!data) throw new Error("Couldn't receive data from axios /get-person-1");
+      const { result } = data;
+      setPerson(result[0]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const handleGetPerson2 = () => {
+
+  }
+  console.log(person);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <button onClick={handleGetPerson1}>get person 1</button>
+      <button onClick={handleGetPerson2}>get person 2</button>
+      {person !== undefined && <p>{person.name} {person.person_id}</p>}
     </div>
   );
 }
