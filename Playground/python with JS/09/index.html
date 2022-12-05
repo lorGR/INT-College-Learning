@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+
+<body>
+    <script defer onload="console.log(`${pyscript.version}`)" src="https://pyscript.net/latest/pyscript.js"></script>
+    <button onclick="logFromPython()">Click Me to Run Some Python</button>
+    <script>
+        function logFromPython() {
+            pyscript.runtime.interpreter.runPython(`
+            animal = "Python"
+            sound = "sss"
+            console.warn(f"{animal}s go " + sound * 5)
+        `)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+
+<body>
+    <script>
+        name = "Guido" //A JS variable
+        // Define a JS Function
+        function addTwoNumbers(x, y){
+            return x + y;
+        }
+    </script>
+    <py-script>
+        # Import and use JS function and variable into Python
+        from js import name, addTwoNumbers
+    
+        print(f"Hello {name}")
+        print("Adding 1 and 2 in Javascript: " + str(addTwoNumbers(1, 2)))
+    </py-script>
+</body>
+
+</html>

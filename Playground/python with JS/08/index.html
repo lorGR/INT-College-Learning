@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+
+<body>
+    <py-script>x = 42</py-script>
+
+    <button onclick="showX()">Click Me to Get 'x' from Python</button>
+    <script>
+        function showX(){
+            console.log(`In Python right now, x = ${PyScript.globals.get('x')}`)
+        }
+    </script>
+</body>
+
+</html>
