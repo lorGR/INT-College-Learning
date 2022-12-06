@@ -5,13 +5,12 @@ const app = express();
 
 app.get("/", (req: express.Request, res: express.Response) => {
     try {
-        let dataToSend;
-        const python = spawn('python3', ['script2.py', 'node.JS', 'Python']);
+        let largeDataToSend = [];
+        const python = spawn('python3', ['script3.py']);
 
         // collect data from script
         python.stdout.on('data',(data) => {
-            dataToSend = data.toString();
-            console.log(dataToSend);
+            largeDataToSend.push(data)
         });
 
         // in close event we are sure that stream from child process is closed
@@ -20,7 +19,7 @@ app.get("/", (req: express.Request, res: express.Response) => {
             console.log(`child process close all stdio with code: ${code}`);
 
             // send data to browser
-            res.send(dataToSend);
+            res.send(largeDataToSend.join(""));
         });
 
     } catch (error) {
