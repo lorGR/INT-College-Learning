@@ -13,7 +13,10 @@
     <div class="container">
         <div class="user">
             <img class="user__image" src="./profile-picture.png" alt="profile-picture">
-            <h3 class="user__name">Tony</h3>
+            <div class="user__info">
+                <h3 class="user__name">Tony</h3>
+                <p class="user__username">@tony.programming</p>
+            </div>
             <button class="button button--primary">View Profile</button>
             <button class="button button--secondry">Add Friend</button>
             <button class="button button--tertiary">Report</button>
@@ -21,11 +24,28 @@
     
         <div class="user user--dark-theme">
             <img class="user__image" src="./profile-picture.png" alt="profile-picture">
-            <h3 class="user__name">Jeffry</h3>
+            <div class="user__info">
+                <h3 class="user__name">Jeffry</h3>
+                <p class="user__username">@jeffry.cooking</p>
+            </div>
             <button class="button button--primary">View Profile</button>
             <button class="button button--secondry">Add Friend</button>
             <button class="button button--tertiary">Report</button>
         </div>
+
+        <!-- Avoid Hierarchy -->
+        <!-- example -->
+        
+        <!-- <div class="user user--dark-theme">
+            <img class="user__image" src="./profile-picture.png" alt="profile-picture">
+            <div class="user__info">
+                <h3 class="user__info__name">Jeffry</h3>
+                <p class="user__info__username">@jeffry.cooking</p>
+            </div>
+            <button class="button button--primary">View Profile</button>
+            <button class="button button--secondry">Add Friend</button>
+            <button class="button button--tertiary">Report</button>
+        </div> -->
     </div>
 
 

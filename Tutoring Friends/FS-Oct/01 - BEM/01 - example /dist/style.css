@@ -31,12 +31,18 @@ body .user__image {
   box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.35);
   margin: 0;
 }
+body .user__info {
+  margin: 0.5rem 0;
+}
 body .user__name {
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+}
+body .user__username {
+  color: #919090;
+  font-size: 0.75rem;
+  text-align: center;
 }
 body .user--dark-theme {
   background-color: #222;

@@ -33,12 +33,19 @@ body {
             margin: 0;
         }
 
+        &__info {
+            margin: .5rem 0;
+        }
+
         &__name {
             text-align: center;
             font-size: 2rem;
             font-weight: 500;
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
+        }
+        &__username {
+            color: #919090;
+            font-size: .75rem;
+            text-align: center;
         }
 
 
