@@ -1,0 +1,29 @@
+.box {
+    /* border: 5px solid black; */
+    border-bottom: 5px solid black;
+}
+
+#myBox {
+    background-color: purple;
+}
+
+#liatBox {
+    background-color: pink;
+}
+
+#alexBox {
+    background-color: rgb(116, 116, 240);
+}
+
+.card {
+    border: 2px solid black;
+    width: 300px;
+    text-align: center;
+    margin: 15px;
+    padding: 10px;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
