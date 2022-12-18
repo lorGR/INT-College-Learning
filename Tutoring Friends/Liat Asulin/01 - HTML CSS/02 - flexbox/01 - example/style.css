@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(108, 108, 108);
+}
+
+.box-container {
+
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(246, 77, 77);
+    color: #fff;
+    border: 5px solid #fff;
+    margin: 5px;
+}
+
