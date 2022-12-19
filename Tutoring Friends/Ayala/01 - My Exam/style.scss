@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'200,
+        'GRAD'0,
+        'opsz'48
+}
+
+
+body {
+    
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    .bg-color {
+        position: absolute;
+        top: 0;
+        height: 500px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(245,48,145,1) 0%, rgba(255,175,0,1) 100%);
+    }
+
+    .screen {
+        //iphone 14 screen size
+        border: 1px solid black;
+        width: 390px;
+        height: 790px;
+        background-color: #fff;
+        position: relative;
+
+        .statusbar {
+            padding: .25rem .5rem;
+            display: flex;
+            justify-content: space-between;
+            .statusbar__info {
+                flex: 1;
+
+                ul {
+                    display: flex;
+                    gap: .5rem;
+                    list-style: none;
+                }
+            }
+
+            &__time {
+                flex: 1;
+                font-weight: 500;
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .5rem;
+
+            &__logo {
+                flex: 1;
+                font-size: 1.5rem;
+
+                p {
+                    text-align: center;
+                }
+            }
+
+            &__inbox {
+                font-size: 1.25rem;
+            }
+        }
+
+        .app {
+            border-top: 1px solid #ddd;
+
+            .header {
+                display: flex;
+
+                &__info {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    font-weight: 500;
+
+                    img {
+                        width: 2rem;
+                    }
+                }
+            }
+
+            .post {
+                img {
+                    width: 100%;
+                    height: 30rem;
+                }
+            }
+
+            .actions {
+                display: flex;
+                gap: 1rem;
+                font-size: 1.5rem;
+                padding: .5rem 1rem;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .information {
+                &__likes {
+                    display: flex;
+                    align-items: center;
+                    gap: .25rem;
+                    padding: .5rem 1rem;
+                    font-weight: 500;
+                }
+
+                &__description {
+                    display: flex;
+                    padding: 0 1rem;
+                    gap: .25rem;
+
+                    .username {
+                        font-weight: 500;
+                    }
+
+                    .user-description {
+                        span {
+                            font-weight: 600;
+                            color: #055ba7;
+                        }
+                    }
+                }
+            }
+
+            .user-info {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                padding: .5rem 1rem;
+
+                &__image {
+                    img {
+                        width: 6rem;
+                    }
+                }
+
+                &__details {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    flex: 1;
+
+                    .categories {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1.25rem;
+
+                        .category-container {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .number {
+                                font-weight: 500;
+                                font-size: 1.25rem;
+                            }
+
+                            .category {
+                                font-size: .75rem;
+                                color: #aaa;
+                                line-height: .25rem;
+                            }
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        padding: .25rem 0;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .user-description {
+                padding: 0 1rem 1rem 1rem;
+
+                &__username {
+                    font-weight: 600;
+                }
+
+                &__link {
+                    color: rgb(2, 57, 125);
+                    font-weight: 500;
+                }
+            }
+
+            .profile-posts {
+                padding: .1rem;
+                height: 22.5rem;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                gap: .1rem;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+
+        .navbar {
+            padding: 0.25rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #ddd;
+            color: #aaa;
+
+            span {
+                font-size: 2.5rem;
+                cursor: pointer;
+            }
+
+            .favorites {
+                position: relative;
+                .dialog {
+                    display: none;
+                    position: absolute;
+                    bottom: 130%;
+                    left: -60%;
+                    background-color: red;
+                    border-radius: .5rem;
+                    padding: .5rem;
+                    font-size: 1rem;
+                    color: #fff;
+                }
+            }
+
+            .favorites:hover {
+                .dialog {
+                    display: flex;
+                    gap: .5rem;
+                }
+            }
+
+            .profile {
+                font-variation-settings:
+                    'FILL'1,
+                    'wght'200,
+                    'GRAD'0,
+                    'opsz'48
+            }
+
+
+            .eclips {
+                display: flex;
+                gap: .25rem;
+                color: rgb(79, 142, 206);
+            }
+
+            &--profile {
+                font-size: 1.75rem;
+                padding: 1rem;
+                justify-content: space-around;
+            }
+
+            &--menu {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
+        }
+    }
+}

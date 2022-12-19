@@ -1,0 +1,227 @@
+* {}
+
+body {
+    margin: 0;
+
+}
+
+.instagram {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(157, 18, 48, 1) 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+
+
+
+    &__screen {
+
+        width: 100vw;
+        height: 70%;
+        max-width: 300px;
+        border: 5px solid blue;
+        position: relative;
+
+
+        &--left {
+            overflow-y: clip;
+        }
+
+    }
+
+    &__screen-time {
+
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        font-size: 15px;
+        padding: 4px 10px;
+
+
+
+    }
+
+    &__screen-time-icons {
+        display: flex;
+        gap: 10px;
+
+    }
+
+
+    &__screen-logo {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px 10px 90px;
+        font-size: x-large;
+        background-color: white;
+        border-bottom: 2px solid black;
+        gap: 15px;
+
+        &--title {
+            margin: auto;
+            font-style: italic;
+            font: inherit;
+        }
+    }
+
+
+    &__screen-username {
+        display: flex;
+
+        justify-content: space-between;
+        background-color: white;
+        padding: 5px 10px;
+
+
+        &__image {
+
+            border: 3px solid white;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+
+        }
+
+
+    }
+
+
+    &__screen__img {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        color: red;
+
+
+        &--love {
+
+            color: azure;
+            align-items: center;
+        }
+
+    }
+
+    &__screen__love {
+        display: flex;
+        border-bottom: 1px solid black;
+        padding: 15px;
+    }
+
+    &__screen__love {
+        display: flex;
+        gap: 10px;
+
+    }
+
+
+
+    &__screen__likes {
+
+        display: flex;
+        padding: 10px 0px 5px 5px;
+        gap: 10px;
+
+
+
+        p {
+            margin-left: -90px;
+            padding-top: 5px;
+
+
+        }
+
+        &--marina {
+            font-size: 15px;
+            color: blue;
+            padding-top: 20px;
+
+        }
+    }
+
+
+    &__screen__likes-icons {
+
+        padding-top: 10px;
+
+    }
+
+
+    &__screen__likes-footer {
+        display: flex;
+        font-size: 25px;
+        padding: 15px 10px 5px 10px;
+        gap: 35px;
+        border-top: 1px solid black;
+
+    }
+
+/* חלק שני*/
+
+    &__screen-username {
+        display: flex;
+        background-color: white;
+        flex-direction: row ;
+        gap: 2px;
+    }
+
+    &__screen-username__number {
+        margin: 0;
+        font-weight: bold;
+        
+    }
+
+    &__screen-username__post {
+        margin: 0;
+        font-size: 12px;
+        color: #828181;
+    }
+
+    &__screen-username__followe {
+        margin: 0;
+        font-size: 12px;
+        color: #828181;
+    }
+
+    &__screen-username__follow {
+        margin: 0;
+        font-size: 12px;
+        color: #828181;
+    }
+    input{
+        padding: 10px 10px 10px 10px;
+    }
+
+
+&__screen-username__icon{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    border-top: 1px solid black;
+    
+}
+
+
+&__screen-username-imges{
+   width: 180px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    padding: 0px 50px 0px 0px;
+}
+
+&__screen-username-imgess{
+    width: 180px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+padding: 0px 50px 0px 0px;
+}
+
+
+
+
+}

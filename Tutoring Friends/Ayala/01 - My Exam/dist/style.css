@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+}
+body .bg-color {
+  position: absolute;
+  top: 0;
+  height: 500px;
+  width: 100%;
+  background: linear-gradient(180deg, #f53091 0%, #ffaf00 100%);
+}
+body .screen {
+  border: 1px solid black;
+  width: 390px;
+  height: 790px;
+  background-color: #fff;
+  position: relative;
+}
+body .screen .statusbar {
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+body .screen .statusbar .statusbar__info {
+  flex: 1;
+}
+body .screen .statusbar .statusbar__info ul {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+body .screen .statusbar__time {
+  flex: 1;
+  font-weight: 500;
+}
+body .screen .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+body .screen .header__logo {
+  flex: 1;
+  font-size: 1.5rem;
+}
+body .screen .header__logo p {
+  text-align: center;
+}
+body .screen .header__inbox {
+  font-size: 1.25rem;
+}
+body .screen .app {
+  border-top: 1px solid #ddd;
+}
+body .screen .app .header {
+  display: flex;
+}
+body .screen .app .header__info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+body .screen .app .header__info img {
+  width: 2rem;
+}
+body .screen .app .post img {
+  width: 100%;
+  height: 30rem;
+}
+body .screen .app .actions {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+body .screen .app .information__likes {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+body .screen .app .information__description {
+  display: flex;
+  padding: 0 1rem;
+  gap: 0.25rem;
+}
+body .screen .app .information__description .username {
+  font-weight: 500;
+}
+body .screen .app .information__description .user-description span {
+  font-weight: 600;
+  color: #055ba7;
+}
+body .screen .app .user-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+body .screen .app .user-info__image img {
+  width: 6rem;
+}
+body .screen .app .user-info__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+}
+body .screen .app .user-info__details .categories {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+body .screen .app .user-info__details .categories .category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .screen .app .user-info__details .categories .category-container .number {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+body .screen .app .user-info__details .categories .category-container .category {
+  font-size: 0.75rem;
+  color: #aaa;
+  line-height: 0.25rem;
+}
+body .screen .app .user-info__details button {
+  border: none;
+  padding: 0.25rem 0;
+  font-weight: 500;
+}
+body .screen .app .user-description {
+  padding: 0 1rem 1rem 1rem;
+}
+body .screen .app .user-description__username {
+  font-weight: 600;
+}
+body .screen .app .user-description__link {
+  color: #02397d;
+  font-weight: 500;
+}
+body .screen .app .profile-posts {
+  padding: 0.1rem;
+  height: 22.5rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0.1rem;
+}
+body .screen .app .profile-posts img {
+  width: 100%;
+  height: 100%;
+}
+body .screen .navbar {
+  padding: 0.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  color: #aaa;
+}
+body .screen .navbar span {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+body .screen .navbar .favorites {
+  position: relative;
+}
+body .screen .navbar .favorites .dialog {
+  display: none;
+  position: absolute;
+  bottom: 130%;
+  left: -60%;
+  background-color: red;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+}
+body .screen .navbar .favorites:hover .dialog {
+  display: flex;
+  gap: 0.5rem;
+}
+body .screen .navbar .profile {
+  font-variation-settings: "FILL" 1, "wght" 200, "GRAD" 0, "opsz" 48;
+}
+body .screen .navbar .eclips {
+  display: flex;
+  gap: 0.25rem;
+  color: #4f8ece;
+}
+body .screen .navbar--profile {
+  font-size: 1.75rem;
+  padding: 1rem;
+  justify-content: space-around;
+}
+body .screen .navbar--menu {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

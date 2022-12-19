@@ -3,15 +3,26 @@ body {
 }
 
 .box-container {
+    height: 1000px;
+    border: 2px solid yellow;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 150px;
     background-color: rgb(246, 77, 77);
     color: #fff;
     border: 5px solid #fff;
-    margin: 5px;
+    
 }
 

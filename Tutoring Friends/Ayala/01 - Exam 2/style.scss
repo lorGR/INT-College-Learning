@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    h1 {
+        background-color: #510080;
+        color: #fff;
+        text-align: center;
+        animation: scale 3s infinite;
+        padding: 1rem;
+        span {
+            background-color: #ccc;
+        }
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 1rem 10rem;
+        .card {
+            width: 100%;
+            border: 1px solid #ccc;
+            &__image {
+                img {
+                    animation: jiggle 10s infinite;
+                    width: 100%;
+                }
+            }
+            &__text, &__title {
+                padding: 1rem;
+            }
+        }   
+
+        .card:nth-child(even) {
+            background-color: #510080;
+            color: #fff;
+            .card__image{
+                img {
+                    animation: jiggleReversed 10s infinite;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 900px) {
+        .container {
+            grid-template-columns: auto auto;
+            padding: 0;
+        }
+    }
+
+    @media(max-width: 600px) {
+        .container {
+            grid-template-columns: auto;
+        }
+    }
+    @keyframes jiggle {
+        0% { transform: rotate(0deg);}
+        25% { transform: rotate(5deg);}
+        75% { transform: rotate(-5deg);}
+        100% {transform: rotate(0deg);}
+    }
+
+    @keyframes jiggleReversed {
+        0% { transform: rotate(0deg);}
+        25% { transform: rotate(-5deg);}
+        75% { transform: rotate(5deg);}
+        100% {transform: rotate(0deg);}
+    }
+
+    @keyframes scale {
+        0% {scale: 100%;}
+        50% {scale: 120%;}
+        100% {scale: 100%;}
+    }
+}

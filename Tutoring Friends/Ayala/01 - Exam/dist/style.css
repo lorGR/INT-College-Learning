@@ -1,0 +1,155 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+}
+
+.instagram {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  background: linear-gradient(0deg, white 0%, white 70%, #9d1230 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  /* חלק שני*/
+}
+.instagram__screen {
+  width: 100vw;
+  height: 70%;
+  max-width: 300px;
+  border: 5px solid blue;
+  position: relative;
+}
+.instagram__screen--left {
+  overflow-y: clip;
+}
+.instagram__screen-time {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  font-size: 15px;
+  padding: 4px 10px;
+}
+.instagram__screen-time-icons {
+  display: flex;
+  gap: 10px;
+}
+.instagram__screen-logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px 10px 90px;
+  font-size: x-large;
+  background-color: white;
+  border-bottom: 2px solid black;
+  gap: 15px;
+}
+.instagram__screen-logo--title {
+  margin: auto;
+  font-style: italic;
+  font: inherit;
+}
+.instagram__screen-username {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 5px 10px;
+}
+.instagram__screen-username__image {
+  border: 3px solid white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.instagram__screen__img {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: red;
+}
+.instagram__screen__img--love {
+  color: azure;
+  align-items: center;
+}
+.instagram__screen__love {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 15px;
+}
+.instagram__screen__love {
+  display: flex;
+  gap: 10px;
+}
+.instagram__screen__likes {
+  display: flex;
+  padding: 10px 0px 5px 5px;
+  gap: 10px;
+}
+.instagram__screen__likes p {
+  margin-left: -90px;
+  padding-top: 5px;
+}
+.instagram__screen__likes--marina {
+  font-size: 15px;
+  color: blue;
+  padding-top: 20px;
+}
+.instagram__screen__likes-icons {
+  padding-top: 10px;
+}
+.instagram__screen__likes-footer {
+  display: flex;
+  font-size: 25px;
+  padding: 15px 10px 5px 10px;
+  gap: 35px;
+  border-top: 1px solid black;
+}
+.instagram__screen-username {
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+  gap: 2px;
+}
+.instagram__screen-username__number {
+  margin: 0;
+  font-weight: bold;
+}
+.instagram__screen-username__post {
+  margin: 0;
+  font-size: 12px;
+  color: #828181;
+}
+.instagram__screen-username__followe {
+  margin: 0;
+  font-size: 12px;
+  color: #828181;
+}
+.instagram__screen-username__follow {
+  margin: 0;
+  font-size: 12px;
+  color: #828181;
+}
+.instagram input {
+  padding: 10px 10px 10px 10px;
+}
+.instagram__screen-username__icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px 5px 10px;
+  border-top: 1px solid black;
+}
+.instagram__screen-username-imges {
+  width: 180px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  padding: 0px 50px 0px 0px;
+}
+.instagram__screen-username-imgess {
+  width: 180px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  padding: 0px 50px 0px 0px;
+}
