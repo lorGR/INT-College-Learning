@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+body h1 {
+  background-color: #4b046c;
+  color: white;
+  text-align: center;
+}
+body .container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+body .container .card {
+  width: 100%;
+}
+body .container .card img {
+  width: 100%;
+}
+body .container .card:nth-child(even) {
+  background-color: #4b046c;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  body .container {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 600px) {
+  body .container {
+    grid-template-columns: auto;
+  }
+}
