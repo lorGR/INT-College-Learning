@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffe9e9;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+body div {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleUpDown 1s infinite;
+}
+body div p {
+  color: white;
+}
+body .red {
+  background-color: red;
+}
+body .orange {
+  background-color: orange;
+}
+body .green {
+  background-color: green;
+}
+@keyframes scaleUpDown {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 120%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
