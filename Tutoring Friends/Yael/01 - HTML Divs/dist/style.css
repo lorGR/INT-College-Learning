@@ -1,0 +1,24 @@
+body {
+  background-color: #b17e4f;
+}
+body h1 {
+  text-align: center;
+}
+body .information {
+  width: 80%;
+  border: 1px solid black;
+  background-color: #794719;
+  padding: 20px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+body .information .sub-title {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+}
+body .information .information-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
