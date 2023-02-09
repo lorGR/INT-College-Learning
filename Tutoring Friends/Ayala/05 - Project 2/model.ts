@@ -11,7 +11,7 @@ class Product {
     }
 }
 
-const products: Array<Product> = []    
+let products: Array<Product> = []    
 
 const _products = getItemsFromStorage();
 if(_products){

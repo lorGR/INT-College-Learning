@@ -28,3 +28,13 @@ function handleAddItem(ev) {
         console.error(error);
     }
 }
+function handleRemoveAllProducts() {
+    try {
+        localStorage.removeItem("products");
+        products = [];
+        renderProducts(products);
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
