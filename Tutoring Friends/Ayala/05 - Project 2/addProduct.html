@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product Page</title>
+    <script src="./dist/view.js"></script>
+    <script src="./dist/control.js"></script>
+    <script src="./dist/model.js"></script>
+</head>
+<body onbeforeunload="handleSaveItems()">
+    <h1>Add Product Page</h1>
+    <form onsubmit="handleAddItem(event)">
+        <input type="text" name="name" id="name" placeholder="name">
+        <input type="text" name="price" id="price" placeholder="price">
+        <input type="text" name="image" id="image" placeholder="image">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
