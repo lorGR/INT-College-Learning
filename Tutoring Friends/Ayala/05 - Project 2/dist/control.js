@@ -14,7 +14,7 @@ function renderProducts(products) {
 }
 function handleAddItem(ev) {
     try {
-        ev.preventDefault;
+        ev.preventDefault();
         var name = ev.target.elements.name.value;
         var price = ev.target.elements.price.value;
         var image = ev.target.elements.image.value;
@@ -22,6 +22,7 @@ function handleAddItem(ev) {
         console.dir(products);
         ev.target.reset();
         renderProducts(products);
+        window.location.href = './index.html';
     }
     catch (error) {
         console.error(error);

@@ -21,9 +21,9 @@ function renderProducts(products: Array<Product>) {
     }
 }
 
-function handleAddItem(ev){
+function handleAddItem(ev:any){
     try {
-        ev.preventDefault;
+        ev.preventDefault();
         const name = ev.target.elements.name.value;
         const price = ev.target.elements.price.value;
         const image = ev.target.elements.image.value;
@@ -35,7 +35,7 @@ function handleAddItem(ev){
         ev.target.reset();
 
         renderProducts(products);
-
+        window.location.href = './index.html';
     } catch (error) {
         console.error(error);
     }
