@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #6e6e6e;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .black {
+        background-color: black;
+        padding: 20px;
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        div {
+            width: 350px;
+            height: 350px;
+            background-color: rgb(118, 183, 252);
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+
+        .red {
+            background-color: red;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .green{
+            background-color: green;
+        }
+    }
+}

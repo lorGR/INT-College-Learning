@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #6e6e6e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+body .black {
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .black div {
+  width: 350px;
+  height: 350px;
+  background-color: #76b7fc;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+body .black .red {
+  background-color: red;
+}
+body .black .orange {
+  background-color: orange;
+}
+body .black .green {
+  background-color: green;
+}
